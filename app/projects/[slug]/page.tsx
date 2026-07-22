@@ -72,9 +72,9 @@ const projects: Record<string, ProjectData> = {
     status: 'Prototype',
     heroImage: '/projects/streamline-01-upload.png',
     gallery: [
-      { src: '/projects/streamline-01-upload.png', alt: 'Upload video drag and drop interface', caption: 'Video upload and processing initialization.' },
+      { src: '/projects/streamline-01-upload.png', alt: 'Upload video drag and drop interface', caption: 'Video upload and analysis entry screen.' },
       { src: '/projects/streamline-02-processing.png', alt: 'Processing progress modal', caption: 'Real-time pipeline execution progress.' },
-      { src: '/projects/streamline-03-results.png', alt: 'Results dashboard with scene detection', caption: 'Extracted scene timeline and identified objects.' },
+      { src: '/projects/streamline-03-results.png', alt: 'Results dashboard with scene detection', caption: 'Generated analysis dashboard with scenes, objects, and transcript.' },
       { src: '/projects/streamline-04-details.png', alt: 'Video intelligence metadata and object classes', caption: 'Detailed object classes and confidence scores.' }
     ],
     problem: 'Manual video review is slow and hard to search.',
@@ -113,7 +113,7 @@ const projects: Record<string, ProjectData> = {
     status: 'Prototype',
     heroImage: '/projects/veridian-01-dashboard.png',
     gallery: [
-      { src: '/projects/veridian-01-dashboard.png', alt: 'Veridian identity verification dashboard', caption: 'Full dashboard overview highlighting suspicion score.' },
+      { src: '/projects/veridian-01-dashboard.png', alt: 'Veridian identity verification dashboard', caption: 'AI profile detector interface with suspicion score and metadata signals.' },
       { src: '/projects/veridian-02-wide.png', alt: 'Veridian image and heuristics view', caption: 'Image analysis and detection accuracy metrics.' },
       { src: '/projects/veridian-03-metadata.png', alt: 'Profile metadata input form', caption: 'Metadata input for holistic risk profiling.' }
     ],
@@ -153,7 +153,7 @@ const projects: Record<string, ProjectData> = {
     status: 'Design Prototype',
     heroImage: '/projects/fruityfizz-01-overview.png',
     gallery: [
-      { src: '/projects/fruityfizz-01-overview.png', alt: 'FruityFizz landing page hero section', caption: 'Bold visual direction for the beverage landing page.' },
+      { src: '/projects/fruityfizz-01-overview.png', alt: 'FruityFizz landing page hero section', caption: 'Product/brand landing page design overview.' },
       { src: '/projects/fruityfizz-02-features.png', alt: 'Product features breakdown', caption: 'Highlighting product benefits and flavor profiles.' },
       { src: '/projects/fruityfizz-03-products.png', alt: 'Product showcase of three cans', caption: 'Visualizing the core product variations.' }
     ],
@@ -192,7 +192,7 @@ const projects: Record<string, ProjectData> = {
     status: 'Design Prototype',
     heroImage: '/projects/floweasy-01-landing.png',
     gallery: [
-      { src: '/projects/floweasy-01-landing.png', alt: 'FlowEasy SaaS landing page hero', caption: 'Conversion-optimized hero section.' },
+      { src: '/projects/floweasy-01-landing.png', alt: 'FlowEasy SaaS landing page hero', caption: 'SaaS landing page concept with features and pricing sections.' },
       { src: '/projects/floweasy-02-pricing.png', alt: 'How it works and pricing plans', caption: 'Simple steps and flexible pricing tiers.' },
       { src: '/projects/floweasy-03-footer.png', alt: 'Footer and newsletter signup', caption: 'Footer navigation and call to action.' }
     ],
@@ -300,14 +300,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </header>
 
           {/* Hero Image */}
-          <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden bg-secondary/20 mb-16 border border-border shadow-md">
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              fill
-              className="object-cover object-top"
-              priority
-            />
+          <div className="relative w-full rounded-2xl overflow-hidden bg-neutral-950/60 p-2 mb-16 border border-white/10 shadow-md">
+            <a href={project.heroImage} target="_blank" rel="noreferrer" className="block group cursor-pointer relative" title="Click to open full size">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-full h-auto max-h-[720px] object-contain rounded-lg group-hover:opacity-90 transition-opacity"
+                priority
+              />
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1.5 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 backdrop-blur-sm border border-white/20">
+                <span>Click to expand</span>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </div>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">

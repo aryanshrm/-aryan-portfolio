@@ -6,14 +6,17 @@ import { Nav } from '@/components/nav'
 interface ProjectData {
   title: string
   subtitle: string
+  status?: string
   heroImage: string
   additionalImage?: string
-  overview: string
-  role: string
+  problem: string
+  solution: string
+  role: string[]
   techStack: string[]
   features: string[]
-  validation?: string[]
-  links: { label: string; url: string }[]
+  results?: string[]
+  learnings: string[]
+  links: { label: string; url: string; primary?: boolean }[]
   caveat?: string
 }
 
@@ -21,107 +24,183 @@ const projects: Record<string, ProjectData> = {
   promptshield: {
     title: 'PromptShield — Agentic AI Security Scanner',
     subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
+    status: 'Production',
     heroImage: '/projects/promptshield-block.png',
-    overview: 'PromptShield is an agentic AI security scanner designed to evaluate LLM and agent workflow inputs before they reach tools, memory, or model execution. It combines deterministic detection, context-aware analysis, and optional local semantic review.',
-    role: 'Designed and built the detection engine, FastAPI API, dashboard integration, benchmark corpora, validation workflow, and semantic review layer.',
+    additionalImage: '/projects/promptshield-dashboard.png',
+    problem: 'Agentic AI systems can follow malicious instructions hidden in prompts, documents, tool outputs, or cross-agent workflows.',
+    solution: 'PromptShield combines deterministic rules, context-aware analysis, suspicion scoring, and optional semantic review to detect and explain agentic AI abuse.',
+    role: [
+      'Designed and built the detection engine',
+      'Developed the FastAPI API and dashboard integration',
+      'Created benchmark corpora and validation workflow',
+      'Implemented the semantic review layer'
+    ],
     techStack: ['Python', 'FastAPI', 'Next.js', 'Pytest', 'YAML', 'Ollama', 'AI Security'],
     features: [
-      'prompt injection and instruction override detection',
-      'system/developer prompt extraction detection',
-      'credential exfiltration detection',
-      'tool misuse and agent workflow abuse detection',
-      'memory/context poisoning detection',
+      'Prompt injection and instruction override detection',
+      'System/developer prompt extraction detection',
+      'Credential exfiltration detection',
+      'Tool misuse and agent workflow abuse detection',
+      'Memory/context poisoning detection',
       'HITL bypass detection',
-      'context classifier for quoted/defensive near-miss handling',
-      'optional Ollama qwen2.5:7b semantic review',
-      'explainable verdicts and contributing signals'
+      'Context classifier for quoted/defensive near-miss handling',
+      'Optional Ollama qwen2.5:7b semantic review',
+      'Explainable verdicts and contributing signals'
     ],
-    validation: [
+    results: [
       '40+ executable rules',
       '400+ backend tests',
-      'optional semantic review recovered 19 deterministic false negatives',
-      'v2.42 local hybrid semantic validation reached 100% malicious recall and 100% benign safe rate'
+      'Recovered 19 deterministic false negatives with optional semantic review',
+      '100% malicious recall on v2.42 local hybrid semantic validation'
     ],
-    caveat: 'caveat: local validation corpus, not third-party audit',
+    learnings: [
+      'Architecting deterministic vs. semantic detection layers',
+      'Building performant Python APIs for security workloads',
+      'Creating robust test suites for AI vulnerability scanning'
+    ],
+    caveat: 'Local validation, not third-party audit.',
     links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/aegis-ai/tree/main/promptshield' }
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/aegis-ai/tree/main/promptshield', primary: true }
     ]
   },
   'streamline-ai': {
     title: 'Streamline AI — Video Analysis Platform',
     subtitle: 'AI-powered video intelligence platform for object detection, transcription, scene analysis, and sentiment.',
+    status: 'Prototype',
     heroImage: '/projects/streamline-upload.png',
     additionalImage: '/projects/streamline-results.png',
-    overview: 'Streamline AI processes uploaded videos and extracts structured intelligence using computer vision, transcription, and NLP.',
-    role: 'Built the AI pipeline, FastAPI endpoints, validation flows, and dashboard experience.',
+    problem: 'Manual video review is slow and hard to search.',
+    solution: 'Streamline AI extracts scenes, objects, transcript, and structured outputs from video.',
+    role: [
+      'Built the AI pipeline',
+      'Developed FastAPI endpoints',
+      'Created validation flows',
+      'Designed and implemented the dashboard experience'
+    ],
     techStack: ['FastAPI', 'YOLOv8', 'Whisper', 'NLP', 'Python'],
     features: [
-      'video upload workflow',
+      'Video upload workflow',
       'YOLOv8 object detection',
       'Whisper transcription',
-      'scene detection',
-      'transcript/results view',
-      'JSON output/export',
-      'test suite covering end-to-end pipeline'
+      'Scene detection',
+      'JSON output / Results dashboard',
+      'Test suite covering end-to-end pipeline'
+    ],
+    results: [
+      'Implemented end-to-end processing pipeline',
+      'Integrated multiple ML models (YOLOv8, Whisper) into a unified API'
+    ],
+    learnings: [
+      'Managing ML model lifecycle in web services',
+      'Handling asynchronous video processing tasks',
+      'Structuring complex JSON intelligence outputs'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/Streamline_Ai' }
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/Streamline_Ai', primary: true }
     ]
   },
   veridian: {
     title: 'Veridian — AI Profile Detector',
-    subtitle: 'AI profile analysis interface for detecting suspicious or synthetic identities.',
+    subtitle: 'AI identity verification prototype for reviewing suspicious or synthetic online profiles.',
+    status: 'Prototype',
     heroImage: '/projects/veridian-dashboard.png',
-    overview: 'Veridian is an AI identity verification and profile analysis concept that combines image input, profile metadata, and heuristic risk indicators to estimate whether a profile may be synthetic or suspicious.',
-    role: 'Designed and built the UI/UX flow, risk panel, metadata inputs, and explainable result structure.',
+    problem: 'Online profiles can be synthetic, low-trust, or suspicious, but many detection tools are difficult to interpret. Reviewers need a clear interface that combines image, metadata, and explainable risk signals.',
+    solution: 'Veridian presents image input, profile metadata, suspicion scoring, and heuristic risk indicators in a clean investigation-style dashboard.',
+    role: [
+      'Designed and built the UI/UX flow',
+      'Created metadata input section',
+      'Developed suspicion score panel',
+      'Implemented explainable result structure'
+    ],
     techStack: ['AI Detection', 'Metadata Analysis', 'UI/UX', 'Product Design'],
     features: [
-      'image upload / preview',
-      'suspicion score',
-      'profile metadata fields',
-      'AI-generated indicator',
-      'explainable risk reasons',
-      'clean investigation-style UI'
+      'Image upload and preview workflow',
+      'Suspicion score with confidence indicator',
+      'Profile metadata inputs for account-level signals',
+      'AI-generated profile indicator',
+      'Explainable risk reasons and heuristic flags',
+      'Investigation-style UI for reviewing suspicious profiles'
+    ],
+    results: [
+      'Designed an intuitive, high-signal layout for trust & safety reviewers',
+      'Created a framework for surfacing opaque AI risk signals as explainable flags'
+    ],
+    learnings: [
+      'Designing explainable risk interfaces',
+      'Presenting AI/metadata signals without overwhelming users',
+      'Creating reviewer-friendly layouts for trust and safety workflows'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/ai-profile-detector' }
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/ai-profile-detector', primary: true }
     ]
   },
   fruityfizz: {
     title: 'FruityFizz — Beverage Brand Product Design',
     subtitle: 'Brand and product landing page design for a beverage concept.',
+    status: 'Design Prototype',
     heroImage: '/projects/fruityfizz-overview.png',
-    overview: 'FruityFizz is a product/brand design concept focused on bold visual direction, product storytelling, and conversion-oriented sections.',
-    role: 'Led visual design, layout direction, product sections, and high-fidelity mockups.',
+    problem: 'New beverage concepts require bold, high-converting visual direction to stand out in a crowded market.',
+    solution: 'FruityFizz is a product/brand design concept focused on bold visual direction, product storytelling, and conversion-oriented sections.',
+    role: [
+      'Led visual design and branding',
+      'Designed layout direction',
+      'Created product showcase sections',
+      'Built high-fidelity mockups in Figma'
+    ],
     techStack: ['Figma', 'Adobe InDesign', 'UI/UX', 'Branding'],
     features: [
-      'brand identity exploration',
-      'landing page design',
-      'product showcase',
-      'pricing/feature sections',
-      'high-fidelity Figma prototype'
+      'Brand identity exploration',
+      'Landing page design',
+      'Product showcase',
+      'Pricing/feature sections',
+      'High-fidelity Figma prototype'
+    ],
+    results: [
+      'Delivered a polished, high-fidelity design prototype',
+      'Established a cohesive brand identity and visual language'
+    ],
+    learnings: [
+      'Balancing bold brand colors with clean UI layout',
+      'Designing conversion-focused product sections',
+      'Creating interactive prototypes for stakeholder review'
     ],
     links: [
-      { label: 'Figma', url: 'https://www.figma.com/proto/ltS7Y3qf5mU3iSoZ930Xqv/Untitled?page-id=0%3A1&node-id=1-2&p=f&viewport=23%2C440%2C0.09&t=2TlITqBePOKm2D9S-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2' }
+      { label: 'Figma', url: 'https://www.figma.com/proto/ltS7Y3qf5mU3iSoZ930Xqv/Untitled?page-id=0%3A1&node-id=1-2&p=f&viewport=23%2C440%2C0.09&t=2TlITqBePOKm2D9S-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A2', primary: true }
     ]
   },
   floweasy: {
     title: 'FlowEasy — SaaS Landing Page',
     subtitle: 'Workflow automation SaaS landing page concept.',
+    status: 'Design Prototype',
     heroImage: '/projects/floweasy-landing.png',
-    overview: 'FlowEasy is a SaaS landing page concept for business workflow automation, designed to communicate product value, benefits, and pricing clearly.',
-    role: 'Designed the landing page structure, feature sections, pricing cards, and conversion-focused layout.',
+    problem: 'SaaS products need to communicate complex workflow automation benefits simply and effectively to drive conversions.',
+    solution: 'FlowEasy is a SaaS landing page concept for business workflow automation, designed to communicate product value, benefits, and pricing clearly.',
+    role: [
+      'Designed the landing page structure',
+      'Created feature and benefits sections',
+      'Designed pricing cards and comparison tiers',
+      'Optimized conversion-focused layout'
+    ],
     techStack: ['Figma', 'UI/UX', 'SaaS Design'],
     features: [
       'SaaS hero section',
-      'feature cards',
-      'benefits section',
-      'pricing plans',
-      'testimonials / social proof',
-      'footer and newsletter layout'
+      'Feature cards',
+      'Benefits section',
+      'Pricing plans',
+      'Testimonials / social proof',
+      'Footer and newsletter layout'
+    ],
+    results: [
+      'Created a comprehensive, structured landing page design',
+      'Established clear visual hierarchy for B2B SaaS audiences'
+    ],
+    learnings: [
+      'Designing clear and compelling SaaS pricing structures',
+      'Creating visual hierarchy for complex product features',
+      'Applying modern B2B SaaS design patterns'
     ],
     links: [
-      { label: 'Figma', url: 'https://www.figma.com/design/H6EKk5vkugE5ga5QTQYVjh/Untitled?node-id=0-1&t=Knn3vycjfelYbrhi-1' }
+      { label: 'Figma', url: 'https://www.figma.com/design/H6EKk5vkugE5ga5QTQYVjh/Untitled?node-id=0-1&t=Knn3vycjfelYbrhi-1', primary: true }
     ]
   }
 }
@@ -132,8 +211,9 @@ export function generateStaticParams() {
   }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects[params.slug]
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
+  const project = projects[resolvedParams.slug]
 
   if (!project) {
     notFound()
@@ -144,22 +224,60 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <Nav />
       
       <article className="py-20 px-4 md:px-8 lg:px-12 border-t border-border mt-16">
-        <div className="max-w-4xl mx-auto mt-8">
+        <div className="max-w-6xl mx-auto mt-4">
           {/* Back Link */}
           <div className="mb-8">
-            <Link href="/#projects" className="text-primary hover:underline inline-flex items-center gap-2">
+            <Link href="/#projects" className="text-primary hover:underline inline-flex items-center gap-2 font-medium">
               <span>←</span> Back to Projects
             </Link>
           </div>
 
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{project.title}</h1>
-            <p className="text-xl text-foreground/70">{project.subtitle}</p>
+            <div className="flex flex-col md:flex-row gap-6 md:items-start justify-between mb-8">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{project.title}</h1>
+                <p className="text-xl text-foreground/70 max-w-3xl">{project.subtitle}</p>
+              </div>
+              {project.status && (
+                <div className="shrink-0">
+                  <span className="inline-flex px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">
+                    {project.status}
+                  </span>
+                </div>
+              )}
+            </div>
+            
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.techStack.map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-secondary/50 text-foreground/80 rounded-full text-sm font-medium border border-border/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            
+            <div className="flex flex-wrap gap-4 border-b border-border pb-12">
+              {project.links.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-sm transition-all ${
+                    link.primary 
+                      ? 'bg-primary text-primary-foreground hover:opacity-90 shadow-sm' 
+                      : 'border border-border text-foreground hover:bg-secondary/30'
+                  }`}
+                >
+                  {link.label}
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              ))}
+            </div>
           </header>
 
           {/* Hero Image */}
-          <div className="relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden bg-muted mb-16 border border-border">
+          <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden bg-secondary/20 mb-16 border border-border shadow-md">
             <Image
               src={project.heroImage}
               alt={project.title}
@@ -169,86 +287,99 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="md:col-span-2 space-y-12">
-              <section>
-                <h2 className="text-2xl font-bold mb-4 border-b border-border pb-2">Overview</h2>
-                <p className="text-foreground/80 leading-relaxed text-lg">{project.overview}</p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 border-b border-border pb-2">My Role / What I Built</h2>
-                <p className="text-foreground/80 leading-relaxed text-lg">{project.role}</p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 border-b border-border pb-2">Key Features</h2>
-                <ul className="list-disc list-inside space-y-2 text-foreground/80 text-lg">
-                  {project.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+            {/* Sidebar Data */}
+            <div className="md:col-span-4 space-y-8 order-2 md:order-1">
+              <section className="bg-card p-8 rounded-2xl border border-border">
+                <h3 className="text-xl font-bold mb-6 text-foreground uppercase tracking-wider text-sm">My Role / What I Built</h3>
+                <ul className="space-y-4 text-foreground/80">
+                  {project.role.map((r, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-primary mt-0.5 text-lg leading-none">▹</span>
+                      <span>{r}</span>
+                    </li>
                   ))}
                 </ul>
               </section>
 
-              {project.validation && (
+              <section className="bg-card p-8 rounded-2xl border border-border">
+                <h3 className="text-xl font-bold mb-6 text-foreground uppercase tracking-wider text-sm">What I Learned</h3>
+                <ul className="space-y-4 text-foreground/80">
+                  {project.learnings.map((learning, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-primary mt-0.5 text-lg leading-none">▹</span>
+                      <span>{learning}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            {/* Main Content */}
+            <div className="md:col-span-8 space-y-16 order-1 md:order-2">
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-foreground">The Problem</h2>
+                <div className="text-foreground/80 leading-relaxed text-lg prose prose-invert">
+                  <p>{project.problem}</p>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-foreground">The Solution</h2>
+                <div className="text-foreground/80 leading-relaxed text-lg prose prose-invert">
+                  <p>{project.solution}</p>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-foreground">Key Features</h2>
+                <ul className="space-y-4 text-foreground/80 text-lg">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex gap-4 items-center bg-secondary/10 p-4 rounded-xl border border-border/50">
+                      <div className="bg-primary/20 p-1.5 rounded-md text-primary shrink-0">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                      </div>
+                      <span className="font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {project.additionalImage && (
                 <section>
-                  <h2 className="text-2xl font-bold mb-4 border-b border-border pb-2">Validation & Results</h2>
-                  <ul className="list-disc list-inside space-y-2 text-foreground/80 text-lg">
-                    {project.validation.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden bg-secondary/10 border border-border shadow-lg p-4 md:p-8">
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={project.additionalImage}
+                        alt={`${project.title} additional view`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
                 </section>
               )}
 
-              {project.additionalImage && (
-                <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden bg-muted mb-16 border border-border mt-16">
-                  <Image
-                    src={project.additionalImage}
-                    alt={`${project.title} additional view`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div className="space-y-8">
-              <section className="bg-card p-6 rounded-xl border border-border">
-                <h3 className="font-bold mb-4 uppercase text-sm tracking-wider text-foreground/60">Tech Stack</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-secondary/50 text-foreground/80 rounded-full text-sm font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </section>
-
-              <section className="bg-card p-6 rounded-xl border border-border">
-                <h3 className="font-bold mb-4 uppercase text-sm tracking-wider text-foreground/60">Links</h3>
-                <div className="flex flex-col gap-3">
-                  {project.links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex justify-center w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </section>
-
-              {project.caveat && (
+              {project.results && project.results.length > 0 && (
                 <section>
-                  <p className="text-sm text-foreground/50 italic border-l-2 border-primary/50 pl-4 py-1">
-                    {project.caveat}
-                  </p>
+                  <h2 className="text-3xl font-bold mb-6 text-foreground">Results & Validation</h2>
+                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
+                    <ul className="space-y-5 text-foreground/90 text-lg">
+                      {project.results.map((item, i) => (
+                        <li key={i} className="flex gap-4 items-start">
+                          <span className="text-primary font-bold text-2xl leading-none mt-1">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {project.caveat && (
+                      <div className="mt-8 pt-6 border-t border-primary/20">
+                        <p className="text-sm text-foreground/60 italic border-l-2 border-primary/40 pl-4 py-1">
+                          {project.caveat}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </section>
               )}
             </div>
@@ -256,7 +387,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </article>
 
-      <footer className="py-8 px-4 md:px-8 lg:px-12 border-t border-border text-center">
+      <footer className="py-8 px-4 md:px-8 lg:px-12 border-t border-border text-center mt-12">
         <p className="text-sm text-foreground/40">
           Built with Next.js, TypeScript, and Tailwind CSS.
         </p>

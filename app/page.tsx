@@ -10,7 +10,7 @@ const projectsData = [
     title: 'Streamline AI — Video Analysis Platform',
     description:
       'Full-stack video intelligence platform using YOLOv8 object detection, Whisper transcription, scene analysis, and NLP sentiment analysis.',
-    image: '/projects/streamline-upload.png',
+    image: '/projects/streamline-01-upload.png',
     imageAlt: 'Streamline AI video upload dashboard',
     technologies: ['FastAPI', 'YOLOv8', 'Whisper', 'NLP', 'Python'],
     buttons: [
@@ -28,7 +28,7 @@ const projectsData = [
     title: 'Veridian — AI Profile Detector',
     description:
       'AI profile analysis interface for detecting suspicious or synthetic identities using image, metadata, and heuristic signals.',
-    image: '/projects/veridian-dashboard.png',
+    image: '/projects/veridian-01-dashboard.png',
     imageAlt: 'Veridian identity verification dashboard',
     technologies: ['AI Detection', 'Metadata Analysis', 'UI/UX', 'Product Design'],
     buttons: [
@@ -46,7 +46,7 @@ const projectsData = [
     title: 'FruityFizz — Beverage Brand Product Design',
     description:
       'Brand and product landing page design for a beverage concept with bold visual direction and conversion-focused layouts.',
-    image: '/projects/fruityfizz-overview.png',
+    image: '/projects/fruityfizz-01-overview.png',
     imageAlt: 'FruityFizz beverage brand product design',
     technologies: ['Figma', 'Adobe InDesign', 'UI/UX', 'Branding'],
     buttons: [
@@ -64,7 +64,7 @@ const projectsData = [
     title: 'FlowEasy — SaaS Landing Page',
     description:
       'SaaS landing page concept for workflow automation with benefit sections, pricing cards, and conversion-focused layout.',
-    image: '/projects/floweasy-landing.png',
+    image: '/projects/floweasy-01-landing.png',
     imageAlt: 'FlowEasy SaaS landing page design',
     technologies: ['Figma', 'UI/UX', 'SaaS Design'],
     buttons: [
@@ -106,7 +106,7 @@ export default function Home() {
               {/* Image */}
               <div className="relative h-96 lg:h-auto bg-secondary/20">
                 <Image
-                  src="/projects/promptshield-block.png"
+                  src="/projects/promptshield-01-block.png"
                   alt="PromptShield security scanner dashboard"
                   fill
                   className="object-cover object-top"

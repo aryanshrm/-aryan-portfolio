@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Nav } from '@/components/nav'
+import { ProjectGallery, ProjectImage } from '@/components/project-gallery'
 
 interface ProjectData {
   title: string
   subtitle: string
   status?: string
   heroImage: string
-  additionalImage?: string
+  gallery?: ProjectImage[]
   problem: string
   solution: string
   role: string[]
@@ -25,8 +26,10 @@ const projects: Record<string, ProjectData> = {
     title: 'PromptShield — Agentic AI Security Scanner',
     subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
     status: 'Research MVP',
-    heroImage: '/projects/promptshield-block.png',
-    additionalImage: '/projects/promptshield-dashboard.png',
+    heroImage: '/projects/promptshield-01-block.png',
+    gallery: [
+      { src: '/projects/promptshield-01-block.png', alt: 'PromptShield dashboard showing BLOCK verdict and 5.00 risk score', caption: 'Actual dashboard result for critical injection detection.' }
+    ],
     problem: 'Agentic AI systems can follow malicious instructions hidden in prompts, documents, tool outputs, or cross-agent workflows.',
     solution: 'PromptShield combines deterministic rules, context-aware analysis, suspicion scoring, and optional semantic review to detect and explain agentic AI abuse.',
     role: [
@@ -67,8 +70,13 @@ const projects: Record<string, ProjectData> = {
     title: 'Streamline AI — Video Analysis Platform',
     subtitle: 'AI-powered video intelligence platform for object detection, transcription, scene analysis, and sentiment.',
     status: 'Prototype',
-    heroImage: '/projects/streamline-upload.png',
-    additionalImage: '/projects/streamline-results.png',
+    heroImage: '/projects/streamline-01-upload.png',
+    gallery: [
+      { src: '/projects/streamline-01-upload.png', alt: 'Upload video drag and drop interface', caption: 'Video upload and processing initialization.' },
+      { src: '/projects/streamline-02-processing.png', alt: 'Processing progress modal', caption: 'Real-time pipeline execution progress.' },
+      { src: '/projects/streamline-03-results.png', alt: 'Results dashboard with scene detection', caption: 'Extracted scene timeline and identified objects.' },
+      { src: '/projects/streamline-04-details.png', alt: 'Video intelligence metadata and object classes', caption: 'Detailed object classes and confidence scores.' }
+    ],
     problem: 'Manual video review is slow and hard to search.',
     solution: 'Streamline AI extracts scenes, objects, transcript, and structured outputs from video.',
     role: [
@@ -103,7 +111,12 @@ const projects: Record<string, ProjectData> = {
     title: 'Veridian — AI Profile Detector',
     subtitle: 'AI identity verification prototype for reviewing suspicious or synthetic online profiles.',
     status: 'Prototype',
-    heroImage: '/projects/veridian-dashboard.png',
+    heroImage: '/projects/veridian-01-dashboard.png',
+    gallery: [
+      { src: '/projects/veridian-01-dashboard.png', alt: 'Veridian identity verification dashboard', caption: 'Full dashboard overview highlighting suspicion score.' },
+      { src: '/projects/veridian-02-wide.png', alt: 'Veridian image and heuristics view', caption: 'Image analysis and detection accuracy metrics.' },
+      { src: '/projects/veridian-03-metadata.png', alt: 'Profile metadata input form', caption: 'Metadata input for holistic risk profiling.' }
+    ],
     problem: 'Online profiles can be synthetic, low-trust, or suspicious, but many detection tools are difficult to interpret. Reviewers need a clear interface that combines image, metadata, and explainable risk signals.',
     solution: 'Veridian presents image input, profile metadata, suspicion scoring, and heuristic risk indicators in a clean investigation-style dashboard.',
     role: [
@@ -138,7 +151,12 @@ const projects: Record<string, ProjectData> = {
     title: 'FruityFizz — Beverage Brand Product Design',
     subtitle: 'Brand and product landing page design for a beverage concept.',
     status: 'Design Prototype',
-    heroImage: '/projects/fruityfizz-overview.png',
+    heroImage: '/projects/fruityfizz-01-overview.png',
+    gallery: [
+      { src: '/projects/fruityfizz-01-overview.png', alt: 'FruityFizz landing page hero section', caption: 'Bold visual direction for the beverage landing page.' },
+      { src: '/projects/fruityfizz-02-features.png', alt: 'Product features breakdown', caption: 'Highlighting product benefits and flavor profiles.' },
+      { src: '/projects/fruityfizz-03-products.png', alt: 'Product showcase of three cans', caption: 'Visualizing the core product variations.' }
+    ],
     problem: 'New beverage concepts require bold, high-converting visual direction to stand out in a crowded market.',
     solution: 'FruityFizz is a product/brand design concept focused on bold visual direction, product storytelling, and conversion-oriented sections.',
     role: [
@@ -172,7 +190,12 @@ const projects: Record<string, ProjectData> = {
     title: 'FlowEasy — SaaS Landing Page',
     subtitle: 'Workflow automation SaaS landing page concept.',
     status: 'Design Prototype',
-    heroImage: '/projects/floweasy-landing.png',
+    heroImage: '/projects/floweasy-01-landing.png',
+    gallery: [
+      { src: '/projects/floweasy-01-landing.png', alt: 'FlowEasy SaaS landing page hero', caption: 'Conversion-optimized hero section.' },
+      { src: '/projects/floweasy-02-pricing.png', alt: 'How it works and pricing plans', caption: 'Simple steps and flexible pricing tiers.' },
+      { src: '/projects/floweasy-03-footer.png', alt: 'Footer and newsletter signup', caption: 'Footer navigation and call to action.' }
+    ],
     problem: 'SaaS products need to communicate complex workflow automation benefits simply and effectively to drive conversions.',
     solution: 'FlowEasy is a SaaS landing page concept for business workflow automation, designed to communicate product value, benefits, and pricing clearly.',
     role: [
@@ -345,19 +368,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </ul>
               </section>
 
-              {project.additionalImage && (
-                <section>
-                  <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden bg-secondary/10 border border-border shadow-lg p-4 md:p-8">
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={project.additionalImage}
-                        alt={`${project.title} additional view`}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-                </section>
+              {project.gallery && project.gallery.length > 0 && (
+                <ProjectGallery images={project.gallery} title="Screenshots" />
               )}
 
               {project.results && project.results.length > 0 && (

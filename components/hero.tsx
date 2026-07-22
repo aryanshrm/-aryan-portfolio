@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-20 pb-20 px-4 md:px-8 lg:px-12 bg-gradient-to-br from-background via-background to-card relative overflow-hidden">
+    <section className="min-h-screen flex items-center pt-32 pb-20 px-4 md:px-8 lg:px-12 bg-gradient-to-br from-background via-background to-card relative overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
 
@@ -101,7 +101,7 @@ export function Hero() {
                     {/* PromptShield Preview */}
                     <Link href="/projects/promptshield" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
                       <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
-                        <Image src="/projects/promptshield-01-block.png" alt="PromptShield dashboard" fill className="object-cover" />
+                        <Image src="/projects/promptshield-block.png" alt="PromptShield dashboard" fill className="object-cover" />
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">PromptShield</div>

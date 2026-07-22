@@ -106,7 +106,7 @@ export default function Home() {
               {/* Image */}
               <div className="relative h-96 lg:h-auto bg-secondary/20">
                 <Image
-                  src="/projects/promptshield-01-block.png"
+                  src="/projects/promptshield-block.png"
                   alt="PromptShield security scanner dashboard"
                   fill
                   className="object-cover object-top"

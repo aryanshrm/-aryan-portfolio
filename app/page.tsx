@@ -109,7 +109,7 @@ export default function Home() {
                   src="/projects/promptshield-block.png"
                   alt="PromptShield security scanner dashboard"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
 

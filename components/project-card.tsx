@@ -35,7 +35,7 @@ export function ProjectCard({
               src={image}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </div>
@@ -94,7 +94,7 @@ export function ProjectCard({
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover"
+          className="object-cover object-top"
         />
       </div>
 

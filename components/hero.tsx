@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Hero() {
   return (
@@ -81,39 +82,65 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Right: Abstract technical card visual */}
-        <div className="relative h-96 hidden md:flex items-center justify-center">
-          <div className="relative w-full h-full">
+        {/* Right: Featured Builds visual */}
+        <div className="relative mt-12 md:mt-0 w-full flex flex-col items-center justify-center">
+          <div className="relative w-full max-w-sm md:max-w-md">
             {/* Stacked cards background effect */}
-            <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-xl transform -rotate-3 -translate-x-2 translate-y-2" />
-            <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-lg transform rotate-2 translate-x-2 -translate-y-1" />
-
+            <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-xl transform -rotate-2 -translate-x-1 translate-y-1" />
+            
             {/* Main card */}
-            <div className="absolute inset-0 bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl shadow-2xl p-8 flex flex-col justify-center">
+            <div className="relative bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl shadow-2xl p-6 md:p-8 flex flex-col justify-center">
               {/* Grid pattern */}
               <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] bg-[size:30px_30px] rounded-2xl pointer-events-none" />
 
-              <div className="relative z-10 space-y-6">
+              <div className="relative z-10 space-y-5">
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Featured Projects</div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="text-sm text-foreground">PromptShield</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-accent" />
-                      <span className="text-sm text-foreground">Streamline AI</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="text-sm text-foreground">Veridian</span>
-                    </div>
+                  <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Featured Builds</div>
+                  <div className="space-y-3">
+                    
+                    {/* PromptShield Preview */}
+                    <Link href="/projects/promptshield" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/projects/promptshield-01-block.png" alt="PromptShield dashboard" fill className="object-cover" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">PromptShield</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          AI Security Scanner
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* Streamline AI Preview */}
+                    <Link href="/projects/streamline-ai" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/projects/streamline-01-upload.png" alt="Streamline AI interface" fill className="object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Streamline AI</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          Video Intelligence
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* Veridian Preview */}
+                    <Link href="/projects/veridian" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/projects/veridian-01-dashboard.png" alt="Veridian dashboard" fill className="object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Veridian</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          AI Profile Detector
+                        </div>
+                      </div>
+                    </Link>
+
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-border">
-                  <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Capabilities</div>
                   <div className="grid grid-cols-2 gap-2 text-xs text-foreground/70">
                     <div className="flex items-center gap-2">
                       <div className="w-1 h-1 rounded-full bg-foreground/40" />
@@ -125,11 +152,11 @@ export function Hero() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-1 h-1 rounded-full bg-foreground/40" />
-                      Backend Focus
+                      Semantic Review
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-1 h-1 rounded-full bg-foreground/40" />
-                      Semantic Review
+                      Backend Focus
                     </div>
                   </div>
                 </div>

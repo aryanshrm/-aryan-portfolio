@@ -24,7 +24,7 @@ const projects: Record<string, ProjectData> = {
   promptshield: {
     title: 'PromptShield — Agentic AI Security Scanner',
     subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
-    status: 'Production',
+    status: 'Research MVP',
     heroImage: '/projects/promptshield-block.png',
     additionalImage: '/projects/promptshield-dashboard.png',
     problem: 'Agentic AI systems can follow malicious instructions hidden in prompts, documents, tool outputs, or cross-agent workflows.',
@@ -58,7 +58,7 @@ const projects: Record<string, ProjectData> = {
       'Building performant Python APIs for security workloads',
       'Creating robust test suites for AI vulnerability scanning'
     ],
-    caveat: 'Local validation, not third-party audit.',
+    caveat: 'Local validation, not third-party audit. Optional semantic review adds latency and is intended for deep review mode.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/aegis-ai/tree/main/promptshield', primary: true }
     ]
@@ -333,9 +333,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
               <section>
                 <h2 className="text-3xl font-bold mb-6 text-foreground">Key Features</h2>
-                <ul className="space-y-4 text-foreground/80 text-lg">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-foreground/80 text-lg">
                   {project.features.map((feature, i) => (
-                    <li key={i} className="flex gap-4 items-center bg-secondary/10 p-4 rounded-xl border border-border/50">
+                    <li key={i} className="flex gap-4 items-center bg-secondary/10 p-4 rounded-xl border border-border/50 h-full">
                       <div className="bg-primary/20 p-1.5 rounded-md text-primary shrink-0">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                       </div>

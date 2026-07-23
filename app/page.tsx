@@ -190,9 +190,17 @@ export default function Home() {
                   >
                     GitHub
                   </a>
+                  <a
+                    href="https://youtube.com/shorts/HVVbpmBT7to?feature=share"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
+                  >
+                    Watch Demo
+                  </a>
                 </div>
                 <p className="text-xs text-foreground/50 mt-4 italic">
-                  Demo video coming soon — dashboard and validation results available.
+                  Dashboard and validation results available.
                 </p>
               </div>
             </div>

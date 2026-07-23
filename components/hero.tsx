@@ -21,7 +21,7 @@ export function Hero() {
               Building applied AI systems for security, intelligence, and product workflows.
             </p>
             <p className="text-lg text-foreground/60 leading-relaxed">
-              I&apos;m a Computer Science undergraduate building AI security tools, video intelligence pipelines, and product-focused interfaces. My work combines backend engineering, validation-driven AI systems, and clean user experiences.
+              I started in product/UI design and now build applied AI systems, using that design background to make AI tools explainable, usable, and validation-driven.
             </p>
           </div>
 

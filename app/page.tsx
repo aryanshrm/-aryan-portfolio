@@ -5,7 +5,7 @@ import { ProjectCard } from '@/components/project-card'
 import { SkillsSection } from '@/components/skills-section'
 import { Hero } from '@/components/hero'
 
-const projectsData = [
+const aiProjectsData = [
   {
     title: 'Streamline AI — Video Analysis Platform',
     description:
@@ -13,6 +13,9 @@ const projectsData = [
     image: '/projects/streamline-01-upload.png',
     imageAlt: 'Streamline AI video upload dashboard',
     technologies: ['FastAPI', 'YOLOv8', 'Whisper', 'NLP', 'Python'],
+    year: '2026',
+    status: 'Full-stack AI platform',
+    demoStatus: 'Demo video coming soon',
     buttons: [
       {
         label: 'View Case Study',
@@ -31,6 +34,9 @@ const projectsData = [
     image: '/projects/veridian-01-dashboard.png',
     imageAlt: 'Veridian identity verification dashboard',
     technologies: ['AI Detection', 'Metadata Analysis', 'UI/UX', 'Product Design'],
+    year: '2026',
+    status: 'AI identity prototype',
+    demoStatus: 'Demo video coming soon',
     buttons: [
       {
         label: 'View Case Study',
@@ -42,13 +48,19 @@ const projectsData = [
       },
     ],
   },
+]
+
+const designProjectsData = [
   {
     title: 'FruityFizz — Beverage Brand Product Design',
     description:
       'Brand and product landing page design for a beverage concept with bold visual direction and conversion-focused layouts.',
     image: '/projects/fruityfizz-01-overview.png',
     imageAlt: 'FruityFizz beverage brand product design',
-    technologies: ['Figma', 'Adobe InDesign', 'UI/UX', 'Branding'],
+    technologies: ['Product/UI design foundation', 'Visual systems', 'Brand design', 'Figma'],
+    year: '2025',
+    status: 'Brand/UI design',
+    demoStatus: 'Demo video coming soon',
     buttons: [
       {
         label: 'View Design',
@@ -66,7 +78,10 @@ const projectsData = [
       'SaaS landing page concept for workflow automation with benefit sections, pricing cards, and conversion-focused layout.',
     image: '/projects/floweasy-01-landing.png',
     imageAlt: 'FlowEasy SaaS landing page design',
-    technologies: ['Figma', 'UI/UX', 'SaaS Design'],
+    technologies: ['Product/UI design foundation', 'Landing page design', 'Figma'],
+    year: '2025',
+    status: 'SaaS landing page design',
+    demoStatus: 'Demo video coming soon',
     buttons: [
       {
         label: 'View Design',
@@ -97,7 +112,7 @@ export default function Home() {
       <section className="py-20 px-4 md:px-8 lg:px-12 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-3">Featured Project</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-3">Featured AI Systems</h2>
           </div>
 
           {/* Featured Card */}
@@ -116,6 +131,10 @@ export default function Home() {
               {/* Content */}
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <h3 className="text-3xl font-bold text-foreground mb-3">PromptShield</h3>
+                <div className="flex gap-2 mb-4">
+                  <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">2026</span>
+                  <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">Validation-backed MVP</span>
+                </div>
                 <p className="text-lg text-foreground/60 mb-2">Agentic AI Security Scanner</p>
                 <p className="text-base text-foreground/70 leading-relaxed mb-6">
                   Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.
@@ -143,7 +162,7 @@ export default function Home() {
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['Python', 'FastAPI', 'Next.js', 'Pytest', 'Ollama', 'AI Security'].map((tech) => (
+                  {['Agentic AI security scanner', 'Validation-backed MVP', '400+ tests', 'optional semantic review', 'Python', 'FastAPI'].map((tech) => (
                     <span key={tech} className="inline-flex px-3 py-1 bg-secondary/50 text-foreground/70 rounded-full text-xs font-medium">
                       {tech}
                     </span>
@@ -172,22 +191,31 @@ export default function Home() {
                     GitHub
                   </a>
                 </div>
+                <p className="text-xs text-foreground/50 mt-4 italic">
+                  Demo video coming soon — dashboard and validation results available.
+                </p>
               </div>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            {aiProjectsData.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Selected Work Section */}
-      <section id="projects" className="py-20 px-4 md:px-8 lg:px-12 border-t border-border">
+      {/* Design Background Section */}
+      <section id="design" className="py-20 px-4 md:px-8 lg:px-12 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-3">Selected Work</h2>
-            <p className="text-lg text-foreground/60">Applied AI systems, security tools, and product-focused interfaces.</p>
+            <h2 className="text-4xl font-bold text-foreground mb-3">Design Background</h2>
+            <p className="text-lg text-foreground/60">Product/UI design foundation that helps me build usable AI tools.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projectsData.map((project) => (
+            {designProjectsData.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
           </div>
@@ -202,7 +230,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-foreground mb-8">About</h2>
           <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-            I&apos;m a Computer Science undergraduate at JECRC University building applied AI systems across AI security, computer vision, and full-stack product engineering. I enjoy turning ambiguous AI risks into measurable systems, usable dashboards, and validated engineering workflows.
+            I’m a Computer Science undergraduate at JECRC University. I began by designing product interfaces and prototypes, then moved deeper into applied AI engineering — building video intelligence pipelines, AI security scanners, and validation-driven backend systems. My design background helps me build AI tools that are not only technical, but also understandable and usable.
           </p>
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">Currently focused on:</h3>

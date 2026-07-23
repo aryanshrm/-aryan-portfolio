@@ -8,6 +8,7 @@ interface ProjectData {
   title: string
   subtitle: string
   status?: string
+  note?: string
   heroImage: string
   gallery?: ProjectImage[]
   problem: string
@@ -25,7 +26,8 @@ const projects: Record<string, ProjectData> = {
   promptshield: {
     title: 'PromptShield — Agentic AI Security Scanner',
     subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
-    status: 'Research MVP',
+    status: 'Validation-backed MVP',
+    note: 'Currently being hardened toward production-grade packaging.',
     heroImage: '/projects/promptshield-block.png',
     gallery: [
       { src: '/projects/promptshield-block.png', alt: 'PromptShield dashboard showing BLOCK verdict and 5.00 risk score', caption: 'Actual dashboard result for critical injection detection.' }
@@ -263,10 +265,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <p className="text-xl text-foreground/70 max-w-3xl">{project.subtitle}</p>
               </div>
               {project.status && (
-                <div className="shrink-0">
+                <div className="shrink-0 flex flex-col items-start md:items-end">
                   <span className="inline-flex px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">
                     {project.status}
                   </span>
+                  {project.note && (
+                    <span className="text-sm text-foreground/60 mt-2 max-w-xs italic text-left md:text-right">
+                      {project.note}
+                    </span>
+                  )}
                 </div>
               )}
             </div>

@@ -14,6 +14,9 @@ interface ProjectCardProps {
     href: string
   }>
   featured?: boolean
+  year?: string
+  status?: string
+  demoStatus?: string
 }
 
 export function ProjectCard({
@@ -24,6 +27,9 @@ export function ProjectCard({
   technologies,
   buttons,
   featured = false,
+  year,
+  status,
+  demoStatus,
 }: ProjectCardProps) {
   if (featured) {
     return (
@@ -46,6 +52,12 @@ export function ProjectCard({
               <h2 className="text-3xl font-bold text-foreground mb-4">
                 {title}
               </h2>
+              {(year || status) && (
+                <div className="flex gap-2 mb-4">
+                  {year && <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">{year}</span>}
+                  {status && <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">{status}</span>}
+                </div>
+              )}
               <p className="text-base text-foreground/70 mb-8 leading-relaxed">
                 {description}
               </p>
@@ -80,6 +92,11 @@ export function ProjectCard({
                 )
               })}
             </div>
+            {demoStatus && (
+              <p className="text-xs text-foreground/50 mt-4 italic">
+                {demoStatus}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -103,6 +120,12 @@ export function ProjectCard({
         <h3 className="text-xl font-bold text-foreground mb-2">
           {title}
         </h3>
+        {(year || status) && (
+          <div className="flex gap-2 mb-3">
+            {year && <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-[10px] font-medium border border-border">{year}</span>}
+            {status && <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-[10px] font-medium border border-border">{status}</span>}
+          </div>
+        )}
         <p className="text-sm text-foreground/70 mb-6 flex-grow">
           {description}
         </p>
@@ -135,6 +158,11 @@ export function ProjectCard({
             )
           })}
         </div>
+        {demoStatus && (
+          <p className="text-xs text-foreground/50 mt-4 italic">
+            {demoStatus}
+          </p>
+        )}
       </div>
     </div>
   )

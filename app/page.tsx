@@ -191,7 +191,7 @@ export default function Home() {
                     GitHub
                   </a>
                   <a
-                    href="/projects/promptshield#demo-video"
+                    href="https://youtu.be/liucb4vimkA"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"

@@ -71,12 +71,12 @@ const projects: Record<string, ProjectData> = {
     caveat: 'Local validation, not third-party audit. Optional semantic review adds latency and is intended for deep review mode.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/aegis-ai/tree/main/promptshield', primary: true },
-      { label: 'Watch Demo', url: '/projects/promptshield-demo.mp4', primary: false }
+      { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }
     ],
     demoVideo: {
       title: 'Demo Video',
       description: '74-second walkthrough of PromptShield detecting benign prompts, prompt injection, and zero-click credential exfiltration — with captions and a GitHub README overview.',
-      url: '/projects/promptshield-demo.mp4'
+      url: 'https://www.youtube.com/embed/liucb4vimkA'
     }
   },
   'streamline-ai': {
@@ -401,12 +401,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     <p className="text-foreground/80 leading-relaxed text-lg mb-6">
                       {project.demoVideo.description}
                     </p>
-                    <video
-                      src={project.demoVideo.url}
-                      controls
-                      playsInline
-                      style={{ width: '100%', borderRadius: '12px', background: '#000' }}
-                    />
+                    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px' }}>
+                      <iframe
+                        src={project.demoVideo.url}
+                        title="PromptShield Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '12px' }}
+                      />
+                    </div>
                   </div>
                 </section>
               )}

@@ -70,7 +70,7 @@ const projects: Record<string, ProjectData> = {
     ],
     caveat: 'Local validation, not third-party audit. Optional semantic review adds latency and is intended for deep review mode.',
     links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/aegis-ai/tree/main/promptshield', primary: true },
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
       { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }
     ],
     demoVideo: {

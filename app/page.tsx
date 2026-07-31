@@ -183,7 +183,7 @@ export default function Home() {
                     View Case Study
                   </Link>
                   <a
-                    href="https://github.com/aryanshrm/aegis-ai/tree/main/promptshield"
+                    href="https://github.com/aryanshrm/promptshield"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"

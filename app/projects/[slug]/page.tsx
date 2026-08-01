@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation'
 import { Nav } from '@/components/nav'
 import { ProjectGallery, ProjectImage } from '@/components/project-gallery'
 
+interface ValidationSnapshotItem {
+  context: string
+  result: string
+}
+
 interface ProjectData {
   title: string
   subtitle: string
@@ -17,6 +22,7 @@ interface ProjectData {
   techStack: string[]
   features: string[]
   results?: string[]
+  validationSnapshot?: ValidationSnapshotItem[]
   learnings: string[]
   links: { label: string; url: string; primary?: boolean }[]
   caveat?: string
@@ -60,15 +66,28 @@ const projects: Record<string, ProjectData> = {
     results: [
       '40+ executable rules',
       '400+ backend tests',
-      'Recovered 19 deterministic false negatives with optional semantic review',
-      '100% malicious recall on v2.42 local hybrid semantic validation'
+      'Recovered 19 deterministic false negatives with optional semantic review'
+    ],
+    validationSnapshot: [
+      {
+        context: 'v2.42 Local Hybrid Semantic',
+        result: '100% malicious recall, 100% benign safe rate, 66.7% near-miss safe rate'
+      },
+      {
+        context: 'v2.48 Error Reduction',
+        result: '81% recall, 89% benign safe rate, 78.8% near-miss safe rate; FPs reduced 31 → 4'
+      },
+      {
+        context: 'JailbreakBench Experimental Harness',
+        result: '3% recall, 50% precision'
+      }
     ],
     learnings: [
       'Architecting deterministic vs. semantic detection layers',
       'Building performant Python APIs for security workloads',
       'Creating robust test suites for AI vulnerability scanning'
     ],
-    caveat: 'Local validation, not third-party audit. Optional semantic review adds latency and is intended for deep review mode.',
+    caveat: 'Local/internal validation is not a third-party audit. JailbreakBench is an external generic jailbreak benchmark and remains a known generalization limitation.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
       { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }
@@ -418,20 +437,39 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <ProjectGallery images={project.gallery} title="Screenshots" />
               )}
 
-              {project.results && project.results.length > 0 && (
+              {(project.results || project.validationSnapshot) && (
                 <section>
                   <h2 className="text-3xl font-bold mb-6 text-foreground">Results & Validation</h2>
-                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
-                    <ul className="space-y-5 text-foreground/90 text-lg">
-                      {project.results.map((item, i) => (
-                        <li key={i} className="flex gap-4 items-start">
-                          <span className="text-primary font-bold text-2xl leading-none mt-1">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 space-y-6">
+                    {project.results && project.results.length > 0 && (
+                      <ul className="space-y-4 text-foreground/90 text-lg">
+                        {project.results.map((item, i) => (
+                          <li key={i} className="flex gap-4 items-start">
+                            <span className="text-primary font-bold text-2xl leading-none mt-1">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {project.validationSnapshot && project.validationSnapshot.length > 0 && (
+                      <div className="pt-2">
+                        <h3 className="text-xl font-bold mb-4 text-foreground">Validation Snapshot</h3>
+                        <div className="grid grid-cols-1 gap-3">
+                          {project.validationSnapshot.map((item, i) => (
+                            <div key={i} className="bg-background/60 border border-border/60 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                              <span className="font-semibold text-foreground">{item.context}</span>
+                              <span className="text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-lg self-start sm:self-auto">
+                                {item.result}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {project.caveat && (
-                      <div className="mt-8 pt-6 border-t border-primary/20">
+                      <div className="pt-4 border-t border-primary/20">
                         <p className="text-sm text-foreground/60 italic border-l-2 border-primary/40 pl-4 py-1">
                           {project.caveat}
                         </p>

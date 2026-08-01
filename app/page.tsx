@@ -156,7 +156,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-primary">100%</div>
-                    <div className="text-xs text-foreground/50">Local Recall</div>
+                    <div className="text-xs text-foreground/50">100% local recall</div>
                   </div>
                 </div>
 

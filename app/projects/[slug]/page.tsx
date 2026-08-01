@@ -78,8 +78,8 @@ const projects: Record<string, ProjectData> = {
         result: '81% recall, 89% benign safe rate, 78.8% near-miss safe rate; FPs reduced 31 → 4'
       },
       {
-        context: 'JailbreakBench Harness',
-        result: 'Deprecated / not comparable'
+        context: 'JailbreakBench Experimental Harness',
+        result: '3% recall, 50% precision'
       }
     ],
     learnings: [
@@ -87,7 +87,7 @@ const projects: Record<string, ProjectData> = {
       'Building performant Python APIs for security workloads',
       'Creating robust test suites for AI vulnerability scanning'
     ],
-    caveat: 'Local/internal validation is not a third-party audit. Early external harness was not comparable to PromptShield’s agentic AI threat model and is not used as a current performance claim.',
+    caveat: 'Local/internal validation is not a third-party audit. JailbreakBench is an external generic jailbreak benchmark; low recall reflects threat model scope separation (content moderation vs. agentic prompt injection) and a known generalization limit.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
       { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }

@@ -438,7 +438,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               )}
 
               {(project.results || project.validationSnapshot) && (
-                <section>
+                <section id="validation">
                   <h2 className="text-3xl font-bold mb-6 text-foreground">Results & Validation</h2>
                   <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 space-y-6">
                     {project.results && project.results.length > 0 && (

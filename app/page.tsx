@@ -170,9 +170,15 @@ export default function Home() {
                 </div>
 
                 {/* Caveat */}
-                <p className="text-xs text-foreground/40 mb-6 italic">
+                <p className="text-xs text-foreground/40 mb-2 italic">
                   Local validation result, not a third-party audit.
                 </p>
+                <Link
+                  href="/projects/promptshield#validation"
+                  className="text-xs text-primary hover:underline font-medium inline-block mb-6"
+                >
+                  See full validation breakdown →
+                </Link>
 
                 {/* Buttons */}
                 <div className="flex gap-3 flex-wrap">

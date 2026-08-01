@@ -87,7 +87,7 @@ const projects: Record<string, ProjectData> = {
       'Building performant Python APIs for security workloads',
       'Creating robust test suites for AI vulnerability scanning'
     ],
-    caveat: 'Generic chatbot jailbreak benchmark outside PromptShield’s default agentic-security scope; retained for transparency and future content-safety expansion.',
+    caveat: 'Generic chatbot jailbreak benchmark outside PromptShield’s default agentic-security scope, and also a genuine generalization gap against broad jailbreak-style prompts; retained for transparency and future content-safety expansion.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
       { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }

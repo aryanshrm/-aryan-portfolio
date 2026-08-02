@@ -156,7 +156,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-primary">100%</div>
-                    <div className="text-xs text-foreground/50">100% local recall</div>
+                    <div className="text-xs text-foreground/50">InjecAgent semantic recall</div>
                   </div>
                 </div>
 
@@ -171,7 +171,7 @@ export default function Home() {
 
                 {/* Caveat */}
                 <p className="text-xs text-foreground/40 mb-2 italic">
-                  Local validation result, not a third-party audit.
+                  Local semantic review result; not a third-party audit.
                 </p>
                 <Link
                   href="/projects/promptshield#validation"

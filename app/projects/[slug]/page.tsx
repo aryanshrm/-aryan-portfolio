@@ -70,12 +70,16 @@ const projects: Record<string, ProjectData> = {
     ],
     validationSnapshot: [
       {
-        context: 'v2.42 Local Hybrid Semantic',
-        result: '100% malicious recall, 100% benign safe rate, 66.7% near-miss safe rate'
+        context: 'InjecAgent External Agentic Benchmark',
+        result: '64% deterministic recall → 100% with semantic review; 0 false positives'
       },
       {
         context: 'v2.48 Error Reduction',
         result: '81% recall, 89% benign safe rate, 78.8% near-miss safe rate; FPs reduced 31 → 4'
+      },
+      {
+        context: 'v2.42 Local Hybrid Semantic',
+        result: '100% malicious recall, 100% benign safe rate, 66.7% near-miss safe rate'
       },
       {
         context: 'JailbreakBench External Stress Test',
@@ -87,7 +91,7 @@ const projects: Record<string, ProjectData> = {
       'Building performant Python APIs for security workloads',
       'Creating robust test suites for AI vulnerability scanning'
     ],
-    caveat: 'Generic chatbot jailbreak benchmark outside PromptShield’s default agentic-security scope, and also a genuine generalization gap against broad jailbreak-style prompts; retained for transparency and future content-safety expansion.',
+    caveat: 'InjecAgent is the most aligned external benchmark currently integrated. Semantic review uses local Ollama qwen2.5:7b and adds latency. JailbreakBench is a broad generic jailbreak stress test outside PromptShield’s default agentic-security scope and remains a known generalization gap.',
     links: [
       { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
       { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }

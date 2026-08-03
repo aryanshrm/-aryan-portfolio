@@ -98,6 +98,19 @@ export function Hero() {
                   <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Featured Builds</div>
                   <div className="space-y-3">
                     
+                    {/* CodeForge Preview */}
+                    <Link href="/projects/codeforge" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/images/projects/codeforge/codeforge-dashboard.png" alt="CodeForge dashboard" fill className="object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">CodeForge</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          Coding & Judge Platform
+                        </div>
+                      </div>
+                    </Link>
+
                     {/* PromptShield Preview */}
                     <Link href="/projects/promptshield" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
                       <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">

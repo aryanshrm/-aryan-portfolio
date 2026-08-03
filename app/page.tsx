@@ -7,6 +7,31 @@ import { Hero } from '@/components/hero'
 
 const aiProjectsData = [
   {
+    title: 'CodeForge — Competitive Programming Platform',
+    description:
+      'LeetCode-style production-grade coding platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, and frosted glass UI.',
+    image: '/images/projects/codeforge/codeforge-dashboard.png',
+    imageAlt: 'CodeForge competitive programming platform dashboard',
+    technologies: ['React', 'FastAPI', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Monaco Editor'],
+    year: '2026',
+    status: 'Docker Sandbox Judge Engine',
+    demoStatus: 'Live Platform & Code Sandbox',
+    buttons: [
+      {
+        label: 'View Case Study',
+        href: '/projects/codeforge',
+      },
+      {
+        label: 'Live Platform',
+        href: 'https://hardened-sulfide-probiotic.ngrok-free.dev',
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/aryanshrm/Codeforge',
+      },
+    ],
+  },
+  {
     title: 'Streamline AI — Video Analysis Platform',
     description:
       'Full-stack video intelligence platform using YOLOv8 object detection, Whisper transcription, scene analysis, and NLP sentiment analysis.',

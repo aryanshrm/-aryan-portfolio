@@ -34,6 +34,111 @@ interface ProjectData {
 }
 
 const projects: Record<string, ProjectData> = {
+  codeforge: {
+    title: 'CodeForge — Competitive Programming Platform',
+    subtitle: 'LeetCode-style production-grade coding platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, frosted glass UI.',
+    status: 'Docker Sandbox Judge',
+    note: 'Production-grade competitive programming platform.',
+    heroImage: '/images/projects/codeforge/codeforge-dashboard.png',
+    gallery: [
+      {
+        src: '/images/projects/codeforge/codeforge-dashboard.png',
+        alt: 'CodeForge Home Dashboard',
+        caption: 'Home Hero Dashboard with frosted glass UI, 3D beehive background, and navigation.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-editor.png',
+        alt: 'Monaco Code Editor Workspace',
+        caption: 'Split-screen workspace with Monaco Editor, problem statement, language selector, and submit actions.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-problems.png',
+        alt: 'Interactive Problems List',
+        caption: 'Problems index with difficulty tags (Easy/Medium/Hard), solved status indicators, and user progress bar.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-execution.png',
+        alt: 'Docker Isolated Execution Console',
+        caption: 'Execution Console verifying input, actual output, expected output, and execution status.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-submission-accepted.png',
+        alt: 'Accepted Submission Analytics',
+        caption: 'Submission Accepted view displaying 35ms runtime, Beats 98.4% execution ranking, test case details, and judge log.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-submission-details.png',
+        alt: 'Submission Insights & Code View',
+        caption: 'Submission detail view featuring Key Insight, Pro Tip, execution parameters, and submitted code viewer.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-leaderboard.png',
+        alt: 'Global Leaderboard (Dark Mode)',
+        caption: 'Global Leaderboard in dark theme displaying Champion podium, Silver/Bronze ranks, solved problems, and score points.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-leaderboard-light.png',
+        alt: 'Global Leaderboard (Light Mode)',
+        caption: 'Global Leaderboard in light mode showcasing responsive glassmorphism aesthetic.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-user-dashboard-light.png',
+        alt: 'User Profile Dashboard (Light Mode)',
+        caption: 'User Profile Dashboard with active streak tracking, practice counts, submission history, and progress stats.'
+      },
+      {
+        src: '/images/projects/codeforge/codeforge-features.png',
+        alt: 'Platform Architecture Highlights',
+        caption: 'Core feature modules: Curated Problems, Lightning Fast Judge, and Global Leaderboard.'
+      }
+    ],
+    problem: 'Traditional coding practice sites often suffer from clunky editor UI, insecure execution environments, lack of AI problem hints, and latency during peak leaderboard syncs.',
+    solution: 'CodeForge delivers a LeetCode-style production-grade competitive programming platform built with a React 18 + Vite frontend, FastAPI backend, PostgreSQL database, and a Docker container sandbox for safe multi-language code judging (Python, C++, Java, JS) with real-time leaderboard filtering and AI hint generation.',
+    role: [
+      'Architected full-stack React 18 (Vite + TypeScript) frontend & FastAPI (Python 3.12) backend',
+      'Engineered Docker sandbox execution engine for safe remote code judging across Python, C++, Java, and JavaScript',
+      'Integrated Monaco Editor with multi-language syntax highlighting, dark mode styling, and custom execution console',
+      'Built PostgreSQL + SQLite data access layer using SQLAlchemy, Alembic migrations, Pydantic, and JWT / Google OAuth2 authentication',
+      'Designed frosted glass UI featuring 3D beehive background animations, responsive layouts, and streak tracking'
+    ],
+    techStack: [
+      'React 18', 'Vite', 'TypeScript (70.7%)', 'Python 3.12 (24.6%)',
+      'FastAPI', 'Docker & Docker Compose', 'Monaco Editor', 'PostgreSQL',
+      'SQLite', 'SQLAlchemy', 'Alembic', 'Tailwind CSS', 'Framer Motion',
+      'Groq / Gemini AI', 'JWT / OAuth2'
+    ],
+    features: [
+      '💻 Monaco Code Editor — VS Code editor engine with multi-language support and execution controls',
+      '⚡ Docker-Isolated Judge Sandbox — Isolated execution environment supporting Python, C++, Java, and JavaScript',
+      '🤖 AI Problem Hints — AI-powered hints (Groq / Gemini) to guide users through complex algorithmic blocks',
+      '🏆 Real-Time Leaderboard — Live rating updates with real-time filtering, user profiles, and streak counts',
+      '🔐 Auth & Admin Control — Google OAuth + JWT auth, admin dashboard, and hidden test case verification',
+      '🎨 Frosted Glass UI — Glassmorphism interface with 3D beehive canvas, light/dark mode, and responsive design'
+    ],
+    results: [
+      'Verified Codebase Breakdown: TypeScript 70.7%, Python 24.6%, CSS 1.8%, JavaScript 1.1%, Dockerfile 0.7%, PowerShell 0.4%, Other 0.7%',
+      'Multi-Language Judge Engine: Docker sandbox execution for Python, C++, Java, and JavaScript with hidden test case evaluation',
+      'Quick Start Docker Orchestration: Single command deployment with docker-compose up -d --build (Frontend :3000, Backend API docs :8000/docs)',
+      'Clean Git Repository: 49 commits from source, 1 main re-init commit by Aryan Sharma (@aryanshrm)'
+    ],
+    validationSnapshot: [
+      { context: 'Primary Languages', result: 'TypeScript 70.7% | Python 24.6%' },
+      { context: 'Supported Runtimes', result: 'Python, C++, Java, JavaScript' },
+      { context: 'Sandbox Engine', result: 'Docker Container Isolated Sandbox' },
+      { context: 'Stack', result: 'React 18 + Vite / FastAPI + PostgreSQL / Docker' },
+      { context: 'Deployment', result: 'docker-compose up -d --build' }
+    ],
+    learnings: [
+      'Designing low-latency Docker container sandboxes for untrusted code execution',
+      'Structuring async FastAPI backend services with SQLAlchemy ORM, Alembic migrations, and JWT authentication',
+      'Optimizing Monaco Editor reactivity and custom execution console UI in React 18 + Vite'
+    ],
+    links: [
+      { label: 'Live Platform', url: 'https://hardened-sulfide-probiotic.ngrok-free.dev', primary: true },
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/Codeforge', primary: false },
+      { label: 'Live Portfolio', url: 'https://aryan-portfolio-neon-rho.vercel.app/', primary: false }
+    ]
+  },
   promptshield: {
     title: 'PromptShield — Agentic AI Security Scanner',
     subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',

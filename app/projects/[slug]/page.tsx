@@ -143,44 +143,134 @@ const projects: Record<string, ProjectData> = {
       { label: 'GitHub', url: 'https://github.com/aryanshrm/Streamline_Ai', primary: true }
     ]
   },
-  veridian: {
-    title: 'Veridian — AI Profile Detector',
-    subtitle: 'AI identity verification prototype for reviewing suspicious or synthetic online profiles.',
-    status: 'Prototype',
-    heroImage: '/projects/veridian-01-dashboard.png',
+  nexus: {
+    title: 'NEXUS+ AI Detector v6.1',
+    subtitle: '13-Engine Forensic Inspection Platform',
+    status: 'Active - v6.1 Fixed',
+    note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
+    heroImage: '/projects/nexus/nexus_idle.png',
     gallery: [
-      { src: '/projects/veridian-01-dashboard.png', alt: 'Veridian identity verification dashboard', caption: 'AI profile detector interface with suspicion score and metadata signals.' },
-      { src: '/projects/veridian-02-wide.png', alt: 'Veridian image and heuristics view', caption: 'Image analysis and detection accuracy metrics.' },
-      { src: '/projects/veridian-03-metadata.png', alt: 'Profile metadata input form', caption: 'Metadata input for holistic risk profiling.' }
+      { src: '/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
+      { src: '/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
+      { src: '/projects/nexus/nexus_engines.png', alt: '11-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/projects/nexus/nexus_fixed_fullbody_ai.png', alt: 'Fixed: Full body AI now detected as 59.2% AI', caption: 'Rebalanced weight engine correcting full-body false negative from 37.6% real → 59.2% AI-GENERATED.' },
+      { src: '/projects/nexus/nexus_fixed_henry_real.png', alt: 'Authentic Real Image Forensic Verdict', caption: 'Authentic camera photo verification with low threat risk score.' }
     ],
-    problem: 'Online profiles can be synthetic, low-trust, or suspicious, but many detection tools are difficult to interpret. Reviewers need a clear interface that combines image, metadata, and explainable risk signals.',
-    solution: 'Veridian presents image input, profile metadata, suspicion scoring, and heuristic risk indicators in a clean investigation-style dashboard.',
+    problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
+    solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
     role: [
-      'Designed and built the UI/UX flow',
-      'Created metadata input section',
-      'Developed suspicion score panel',
-      'Implemented explainable result structure'
+      'Architected and implemented 13-engine parallel forensic inspection pipeline',
+      'Trained and fine-tuned ViT-Base checkpoint on 208 forensic images (97.5% accuracy)',
+      'Fixed critical false negative bug on full-body AI images by rebalancing detection weights',
+      'Designed premium glassmorphism dark theme with violet/cyan visual direction'
     ],
-    techStack: ['AI Detection', 'Metadata Analysis', 'UI/UX', 'Product Design'],
+    techStack: [
+      'Python', 'PyTorch', 'Streamlit', 
+      'OpenAI CLIP ViT-B-32', 'HuggingFace Transformers', 
+      'OpenCV', 'Fourier Transform', 'ELA',
+      'Gemini Vision API', 'Groq Vision'
+    ],
     features: [
-      'Image upload and preview workflow',
-      'Suspicion score with confidence indicator',
-      'Profile metadata inputs for account-level signals',
-      'AI-generated profile indicator',
-      'Explainable risk reasons and heuristic flags',
-      'Investigation-style UI for reviewing suspicious profiles'
+      '🧠 13 Specialized Detection Engines - Neural + Signal + Color + Provenance',
+      '⚡ Instant Verdicts with Human vs AI Breakdown (threat score /100)',
+      '📊 Per-Engine Analysis with risk badges, progress bars, detailed explanations',
+      '🎨 Premium Glassmorphism Dark UI - violet/cyan theme',
+      '🔄 Self-Improving - fine-tuned ViT checkpoint included',
+      '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
     ],
     results: [
-      'Designed an intuitive, high-signal layout for trust & safety reviewers',
-      'Created a framework for surfacing opaque AI risk signals as explainable flags'
+      'Trained with 208 images: 106 AI-generated (SDXL, Midjourney v6) + 102 Real (DSLR, mobile)',
+      '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
+      '13 Detection Engines: Neural Ensemble, CLIP, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark, AI Provenance',
+      'Fixed critical bug: Full-body AI image was false negative (37.6% real), rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED'
+    ],
+    validationSnapshot: [
+      {
+        context: 'ViT-Base Forensic Fine-Tuning',
+        result: '97.5% Val Accuracy (Loss: 0.0295, 3 Epochs)'
+      },
+      {
+        context: 'Full-Body AI False Negative Fix',
+        result: '37.6% Real → 59.2% AI-GENERATED Verdict'
+      },
+      {
+        context: 'Detection Engine Count',
+        result: '13 Parallel Engines (Signal + Neural + Color + Provenance)'
+      }
     ],
     learnings: [
-      'Designing explainable risk interfaces',
-      'Presenting AI/metadata signals without overwhelming users',
-      'Creating reviewer-friendly layouts for trust and safety workflows'
+      'Combining high-level semantic embeddings with low-level signal processing (Fourier, ELA, micro-texture)',
+      'Calibrating multi-engine weight ensembles to eliminate false negatives on full-body diffusion outputs',
+      'Designing forensic dark glassmorphism dashboards for instant explainable AI security verdicts'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/ai-profile-detector', primary: true }
+      { label: 'GitHub', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: true },
+      { label: 'Demo Repository', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: false }
+    ]
+  },
+  'nexus-ai-detector': {
+    title: 'NEXUS+ AI Detector v6.1',
+    subtitle: '13-Engine Forensic Inspection Platform',
+    status: 'Active - v6.1 Fixed',
+    note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
+    heroImage: '/projects/nexus/nexus_idle.png',
+    gallery: [
+      { src: '/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
+      { src: '/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
+      { src: '/projects/nexus/nexus_engines.png', alt: '11-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/projects/nexus/nexus_fixed_fullbody_ai.png', alt: 'Fixed: Full body AI now detected as 59.2% AI', caption: 'Rebalanced weight engine correcting full-body false negative from 37.6% real → 59.2% AI-GENERATED.' },
+      { src: '/projects/nexus/nexus_fixed_henry_real.png', alt: 'Authentic Real Image Forensic Verdict', caption: 'Authentic camera photo verification with low threat risk score.' }
+    ],
+    problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
+    solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
+    role: [
+      'Architected and implemented 13-engine parallel forensic inspection pipeline',
+      'Trained and fine-tuned ViT-Base checkpoint on 208 forensic images (97.5% accuracy)',
+      'Fixed critical false negative bug on full-body AI images by rebalancing detection weights',
+      'Designed premium glassmorphism dark theme with violet/cyan visual direction'
+    ],
+    techStack: [
+      'Python', 'PyTorch', 'Streamlit', 
+      'OpenAI CLIP ViT-B-32', 'HuggingFace Transformers', 
+      'OpenCV', 'Fourier Transform', 'ELA',
+      'Gemini Vision API', 'Groq Vision'
+    ],
+    features: [
+      '🧠 13 Specialized Detection Engines - Neural + Signal + Color + Provenance',
+      '⚡ Instant Verdicts with Human vs AI Breakdown (threat score /100)',
+      '📊 Per-Engine Analysis with risk badges, progress bars, detailed explanations',
+      '🎨 Premium Glassmorphism Dark UI - violet/cyan theme',
+      '🔄 Self-Improving - fine-tuned ViT checkpoint included',
+      '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
+    ],
+    results: [
+      'Trained with 208 images: 106 AI-generated (SDXL, Midjourney v6) + 102 Real (DSLR, mobile)',
+      '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
+      '13 Detection Engines: Neural Ensemble, CLIP, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark, AI Provenance',
+      'Fixed critical bug: Full-body AI image was false negative (37.6% real), rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED'
+    ],
+    validationSnapshot: [
+      {
+        context: 'ViT-Base Forensic Fine-Tuning',
+        result: '97.5% Val Accuracy (Loss: 0.0295, 3 Epochs)'
+      },
+      {
+        context: 'Full-Body AI False Negative Fix',
+        result: '37.6% Real → 59.2% AI-GENERATED Verdict'
+      },
+      {
+        context: 'Detection Engine Count',
+        result: '13 Parallel Engines (Signal + Neural + Color + Provenance)'
+      }
+    ],
+    learnings: [
+      'Combining high-level semantic embeddings with low-level signal processing (Fourier, ELA, micro-texture)',
+      'Calibrating multi-engine weight ensembles to eliminate false negatives on full-body diffusion outputs',
+      'Designing forensic dark glassmorphism dashboards for instant explainable AI security verdicts'
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: true },
+      { label: 'Demo Repository', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: false }
     ]
   },
   fruityfizz: {

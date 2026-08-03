@@ -28,23 +28,23 @@ const aiProjectsData = [
     ],
   },
   {
-    title: 'Veridian — AI Profile Detector',
+    title: 'NEXUS+ AI Detector v6.1',
     description:
-      'AI profile analysis interface for detecting suspicious or synthetic identities using image, metadata, and heuristic signals.',
-    image: '/projects/veridian-01-dashboard.png',
-    imageAlt: 'Veridian identity verification dashboard',
-    technologies: ['AI Detection', 'Metadata Analysis', 'UI/UX', 'Product Design'],
+      '13-Engine forensic platform for AI image detection. Cross-references high-level semantic embeddings (CLIP) with low-level signal processing (Fourier, ELA, micro-texture) to expose Midjourney v6, SDXL, DALL-E 3, and Flux fingerprints.',
+    image: '/projects/nexus_idle.png',
+    imageAlt: 'NEXUS+ AI Detector v6.1 forensic inspection platform',
+    technologies: ['Python', 'PyTorch', 'Streamlit', 'CLIP', 'OpenCV', 'Transformers', 'Gemini Vision'],
     year: '2026',
-    status: 'AI identity prototype',
-    demoStatus: 'Demo video coming soon',
+    status: '13-Engine Forensic Platform',
+    demoStatus: 'Streamlit App (v6.1 Fixed)',
     buttons: [
       {
         label: 'View Case Study',
-        href: '/projects/veridian',
+        href: '/projects/nexus',
       },
       {
         label: 'GitHub',
-        href: 'https://github.com/aryanshrm/ai-profile-detector',
+        href: 'https://github.com/sakshamkatoch545-dev/NEXUS-',
       },
     ],
   },

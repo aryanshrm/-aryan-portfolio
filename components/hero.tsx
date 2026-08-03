@@ -124,15 +124,15 @@ export function Hero() {
                       </div>
                     </Link>
 
-                    {/* Veridian Preview */}
-                    <Link href="/projects/veridian" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                    {/* NEXUS+ Preview */}
+                    <Link href="/projects/nexus" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
                       <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
-                        <Image src="/projects/veridian-01-dashboard.png" alt="Veridian dashboard" fill className="object-cover object-top" />
+                        <Image src="/projects/nexus_idle.png" alt="NEXUS+ AI Detector dashboard" fill className="object-cover object-top" />
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Veridian</div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">NEXUS+ AI Detector</div>
                         <div className="text-xs text-foreground/60 mt-0.5">
-                          AI Profile Detector
+                          13-Engine Forensics
                         </div>
                       </div>
                     </Link>

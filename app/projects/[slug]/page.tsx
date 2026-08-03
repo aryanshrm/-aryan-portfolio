@@ -148,13 +148,14 @@ const projects: Record<string, ProjectData> = {
     subtitle: '13-Engine Forensic Inspection Platform',
     status: 'Active - v6.1 Fixed',
     note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
-    heroImage: '/projects/nexus/nexus_idle.png',
+    heroImage: '/images/projects/nexus/nexus_idle.png',
     gallery: [
-      { src: '/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
-      { src: '/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
-      { src: '/projects/nexus/nexus_engines.png', alt: '11-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
-      { src: '/projects/nexus/nexus_fixed_fullbody_ai.png', alt: 'Fixed: Full body AI now detected as 59.2% AI', caption: 'Rebalanced weight engine correcting full-body false negative from 37.6% real → 59.2% AI-GENERATED.' },
-      { src: '/projects/nexus/nexus_fixed_henry_real.png', alt: 'Authentic Real Image Forensic Verdict', caption: 'Authentic camera photo verification with low threat risk score.' }
+      { src: '/images/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
+      { src: '/images/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
+      { src: '/images/projects/nexus/nexus_authentic_green.png', alt: 'AUTHENTIC Green Verdict (40.1% Threat Score)', caption: 'Authentic camera photograph verification (Green verdict 40.1% real).' },
+      { src: '/images/projects/nexus/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Red Verdict (59.2% Threat Score)', caption: 'Full-body AI render detected correctly after weight rebalancing (Red verdict 59.2% AI).' },
+      { src: '/images/projects/nexus/nexus_engines.png', alt: '13-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/images/projects/nexus/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs fixed AI-generated synthetic media.' }
     ],
     problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
     solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
@@ -179,10 +180,11 @@ const projects: Record<string, ProjectData> = {
       '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
     ],
     results: [
-      'Trained with 208 images: 106 AI-generated (SDXL, Midjourney v6) + 102 Real (DSLR, mobile)',
+      'Trained with 208 curated images (106 AI-generated SDXL/Midjourney v6 + 102 Real DSLR/mobile) — curated and tracked via Git LFS',
       '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
-      '13 Detection Engines: Neural Ensemble, CLIP, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark, AI Provenance',
-      'Fixed critical bug: Full-body AI image was false negative (37.6% real), rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED'
+      '13 Detection Engines: Neural Ensemble, CLIP Semantic, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark Detection, AI Provenance',
+      'Fixed critical bug: Full-body AI image was false negative (37.6% real) → rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED correctly',
+      'Added missing AUTHENTIC UI example: Green verdict 40.1% real vs Red 59.2% AI with comparison banner'
     ],
     validationSnapshot: [
       {
@@ -213,13 +215,14 @@ const projects: Record<string, ProjectData> = {
     subtitle: '13-Engine Forensic Inspection Platform',
     status: 'Active - v6.1 Fixed',
     note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
-    heroImage: '/projects/nexus/nexus_idle.png',
+    heroImage: '/images/projects/nexus/nexus_idle.png',
     gallery: [
-      { src: '/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
-      { src: '/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
-      { src: '/projects/nexus/nexus_engines.png', alt: '11-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
-      { src: '/projects/nexus/nexus_fixed_fullbody_ai.png', alt: 'Fixed: Full body AI now detected as 59.2% AI', caption: 'Rebalanced weight engine correcting full-body false negative from 37.6% real → 59.2% AI-GENERATED.' },
-      { src: '/projects/nexus/nexus_fixed_henry_real.png', alt: 'Authentic Real Image Forensic Verdict', caption: 'Authentic camera photo verification with low threat risk score.' }
+      { src: '/images/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
+      { src: '/images/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
+      { src: '/images/projects/nexus/nexus_authentic_green.png', alt: 'AUTHENTIC Green Verdict (40.1% Threat Score)', caption: 'Authentic camera photograph verification (Green verdict 40.1% real).' },
+      { src: '/images/projects/nexus/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Red Verdict (59.2% Threat Score)', caption: 'Full-body AI render detected correctly after weight rebalancing (Red verdict 59.2% AI).' },
+      { src: '/images/projects/nexus/nexus_engines.png', alt: '13-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/images/projects/nexus/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs fixed AI-generated synthetic media.' }
     ],
     problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
     solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
@@ -244,10 +247,11 @@ const projects: Record<string, ProjectData> = {
       '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
     ],
     results: [
-      'Trained with 208 images: 106 AI-generated (SDXL, Midjourney v6) + 102 Real (DSLR, mobile)',
+      'Trained with 208 curated images (106 AI-generated SDXL/Midjourney v6 + 102 Real DSLR/mobile) — curated and tracked via Git LFS',
       '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
-      '13 Detection Engines: Neural Ensemble, CLIP, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark, AI Provenance',
-      'Fixed critical bug: Full-body AI image was false negative (37.6% real), rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED'
+      '13 Detection Engines: Neural Ensemble, CLIP Semantic, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark Detection, AI Provenance',
+      'Fixed critical bug: Full-body AI image was false negative (37.6% real) → rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED correctly',
+      'Added missing AUTHENTIC UI example: Green verdict 40.1% real vs Red 59.2% AI with comparison banner'
     ],
     validationSnapshot: [
       {

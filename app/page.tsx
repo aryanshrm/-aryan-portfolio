@@ -9,7 +9,7 @@ const aiProjectsData = [
   {
     title: 'CodeForge — Competitive Programming Platform',
     description:
-      'LeetCode-style production-grade coding platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, and frosted glass UI.',
+      'LeetCode-style full-stack competitive programming platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, and frosted glass UI.',
     image: '/images/projects/codeforge/codeforge-dashboard.png',
     imageAlt: 'CodeForge competitive programming platform dashboard',
     technologies: ['React', 'FastAPI', 'TypeScript', 'Python', 'PostgreSQL', 'Docker', 'Monaco Editor'],

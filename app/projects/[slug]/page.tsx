@@ -36,9 +36,9 @@ interface ProjectData {
 const projects: Record<string, ProjectData> = {
   codeforge: {
     title: 'CodeForge — Competitive Programming Platform',
-    subtitle: 'LeetCode-style production-grade coding platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, frosted glass UI.',
+    subtitle: 'LeetCode-style full-stack competitive programming platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, frosted glass UI.',
     status: 'Docker Sandbox Judge',
-    note: 'Production-grade competitive programming platform.',
+    note: 'Full-stack competitive programming platform built with React 18, FastAPI, and Docker.',
     heroImage: '/images/projects/codeforge/codeforge-dashboard.png',
     gallery: [
       {
@@ -93,7 +93,7 @@ const projects: Record<string, ProjectData> = {
       }
     ],
     problem: 'Traditional coding practice sites often suffer from clunky editor UI, insecure execution environments, lack of AI problem hints, and latency during peak leaderboard syncs.',
-    solution: 'CodeForge delivers a LeetCode-style production-grade competitive programming platform built with a React 18 + Vite frontend, FastAPI backend, PostgreSQL database, and a Docker container sandbox for safe multi-language code judging (Python, C++, Java, JS) with real-time leaderboard filtering and AI hint generation.',
+    solution: 'CodeForge delivers a LeetCode-style full-stack competitive programming platform built with a React 18 + Vite frontend, FastAPI backend, PostgreSQL database, and a Docker container sandbox for safe multi-language code judging (Python, C++, Java, JS) with real-time leaderboard filtering and AI hint generation.',
     role: [
       'Architected full-stack React 18 (Vite + TypeScript) frontend & FastAPI (Python 3.12) backend',
       'Engineered Docker sandbox execution engine for safe remote code judging across Python, C++, Java, and JavaScript',
@@ -135,8 +135,7 @@ const projects: Record<string, ProjectData> = {
     ],
     links: [
       { label: 'Live Platform', url: 'https://hardened-sulfide-probiotic.ngrok-free.dev', primary: true },
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/Codeforge', primary: false },
-      { label: 'Live Portfolio', url: 'https://aryan-portfolio-neon-rho.vercel.app/', primary: false }
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/Codeforge', primary: false }
     ]
   },
   promptshield: {

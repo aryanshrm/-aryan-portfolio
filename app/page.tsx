@@ -52,27 +52,6 @@ const aiProjectsData = [
       },
     ],
   },
-  {
-    title: 'NEXUS+ AI Detector v6.1',
-    description:
-      '13-Engine forensic platform for AI image detection. Cross-references high-level semantic embeddings (CLIP) with low-level signal processing (Fourier, ELA, micro-texture) to expose Midjourney v6, SDXL, DALL-E 3, and Flux fingerprints.',
-    image: '/projects/nexus_idle.png',
-    imageAlt: 'NEXUS+ AI Detector v6.1 forensic inspection platform',
-    technologies: ['Python', 'PyTorch', 'Streamlit', 'CLIP', 'OpenCV', 'Transformers', 'Gemini Vision'],
-    year: '2026',
-    status: '13-Engine Forensic Platform',
-    demoStatus: 'Streamlit App (v6.1 Fixed)',
-    buttons: [
-      {
-        label: 'View Case Study',
-        href: '/projects/nexus',
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/sakshamkatoch545-dev/NEXUS-',
-      },
-    ],
-  },
 ]
 
 const designProjectsData = [
@@ -133,111 +112,197 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Featured PromptShield Section */}
+      {/* Featured AI Systems Section */}
       <section className="py-20 px-4 md:px-8 lg:px-12 border-t border-border">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-3">Featured AI Systems</h2>
           </div>
 
-          {/* Featured Card */}
-          <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Image */}
-              <div className="relative h-96 lg:h-auto bg-secondary/20">
-                <Image
-                  src="/projects/promptshield-block.png"
-                  alt="PromptShield security scanner dashboard"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-3xl font-bold text-foreground mb-3">PromptShield</h3>
-                <div className="flex gap-2 mb-4">
-                  <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">2026</span>
-                  <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">Validation-backed MVP</span>
-                </div>
-                <p className="text-lg text-foreground/60 mb-2">Agentic AI Security Scanner</p>
-                <p className="text-base text-foreground/70 leading-relaxed mb-6">
-                  Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.
-                </p>
-
-                {/* Metrics */}
-                <div className="grid grid-cols-4 gap-3 mb-8 py-6 border-y border-border">
-                  <div>
-                    <div className="text-2xl font-bold text-primary">40+</div>
-                    <div className="text-xs text-foreground/50">Rules</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">400+</div>
-                    <div className="text-xs text-foreground/50">Tests</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">19</div>
-                    <div className="text-xs text-foreground/50">Recovered FNs</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">100%</div>
-                    <div className="text-xs text-foreground/50">InjecAgent semantic recall</div>
-                  </div>
+          <div className="space-y-8">
+            {/* Featured Card 1: PromptShield */}
+            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Image */}
+                <div className="relative h-96 lg:h-auto bg-secondary/20">
+                  <Image
+                    src="/projects/promptshield-block.png"
+                    alt="PromptShield security scanner dashboard"
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
 
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {['Agentic AI security scanner', 'Validation-backed MVP', '400+ tests', 'optional semantic review', 'Python', 'FastAPI'].map((tech) => (
-                    <span key={tech} className="inline-flex px-3 py-1 bg-secondary/50 text-foreground/70 rounded-full text-xs font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {/* Content */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold text-foreground mb-3">PromptShield</h3>
+                  <div className="flex gap-2 mb-4">
+                    <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">2026</span>
+                    <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">Validation-backed MVP</span>
+                  </div>
+                  <p className="text-lg text-foreground/60 mb-2">Agentic AI Security Scanner</p>
+                  <p className="text-base text-foreground/70 leading-relaxed mb-6">
+                    Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.
+                  </p>
 
-                {/* Caveat */}
-                <p className="text-xs text-foreground/40 mb-2 italic">
-                  Local semantic review result; not a third-party audit.
-                </p>
-                <Link
-                  href="/projects/promptshield#validation"
-                  className="text-xs text-primary hover:underline font-medium inline-block mb-6"
-                >
-                  See full validation breakdown →
-                </Link>
+                  {/* Metrics */}
+                  <div className="grid grid-cols-4 gap-3 mb-8 py-6 border-y border-border">
+                    <div>
+                      <div className="text-2xl font-bold text-primary">40+</div>
+                      <div className="text-xs text-foreground/50">Rules</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">400+</div>
+                      <div className="text-xs text-foreground/50">Tests</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">19</div>
+                      <div className="text-xs text-foreground/50">Recovered FNs</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">100%</div>
+                      <div className="text-xs text-foreground/50">InjecAgent semantic recall</div>
+                    </div>
+                  </div>
 
-                {/* Buttons */}
-                <div className="flex gap-3 flex-wrap">
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['Agentic AI security scanner', 'Validation-backed MVP', '400+ tests', 'optional semantic review', 'Python', 'FastAPI'].map((tech) => (
+                      <span key={tech} className="inline-flex px-3 py-1 bg-secondary/50 text-foreground/70 rounded-full text-xs font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Caveat */}
+                  <p className="text-xs text-foreground/40 mb-2 italic">
+                    Local semantic review result; not a third-party audit.
+                  </p>
                   <Link
-                    href="/projects/promptshield"
-                    className="inline-flex px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+                    href="/projects/promptshield#validation"
+                    className="text-xs text-primary hover:underline font-medium inline-block mb-6"
                   >
-                    View Case Study
+                    See full validation breakdown →
                   </Link>
-                  <a
-                    href="https://github.com/aryanshrm/promptshield"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://youtu.be/liucb4vimkA"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
-                  >
-                    Watch Demo
-                  </a>
+
+                  {/* Buttons */}
+                  <div className="flex gap-3 flex-wrap">
+                    <Link
+                      href="/projects/promptshield"
+                      className="inline-flex px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+                    >
+                      View Case Study
+                    </Link>
+                    <a
+                      href="https://github.com/aryanshrm/promptshield"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="https://youtu.be/liucb4vimkA"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
+                    >
+                      Watch Demo
+                    </a>
+                  </div>
+                  <p className="text-xs text-foreground/50 mt-4 italic">
+                    Dashboard and validation results available.
+                  </p>
                 </div>
-                <p className="text-xs text-foreground/50 mt-4 italic">
-                  Dashboard and validation results available.
-                </p>
+              </div>
+            </div>
+
+            {/* Featured Card 2: NEXUS+ AI Image Forensics */}
+            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg transition-all hover:border-primary/50">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Image */}
+                <div className="relative h-96 lg:h-auto bg-secondary/20 min-h-[340px]">
+                  <Image
+                    src="/projects/nexus_results.png"
+                    alt="NEXUS+ AI Image Forensics dashboard analysis results"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <h3 className="text-3xl font-bold text-foreground mb-3">NEXUS+ AI Image Forensics</h3>
+                  <div className="flex gap-2 mb-4 flex-wrap">
+                    <span className="inline-flex px-2 py-1 bg-secondary/50 text-foreground/70 rounded text-xs font-medium border border-border">2026</span>
+                    <span className="inline-flex px-2.5 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold border border-primary/20">
+                      Live Streamlit Cloud App
+                    </span>
+                  </div>
+                  <p className="text-lg text-foreground/60 mb-2">Deployed Computer Vision & ML Pipeline</p>
+                  <p className="text-base text-foreground/70 leading-relaxed mb-6">
+                    NEXUS+ is a deployed AI image forensics dashboard that detects whether profile images are AI-generated or authentic using a multi-engine computer vision and ML pipeline. Built with Streamlit, PyTorch, CLIP, OpenCV, and Transformers.
+                  </p>
+
+                  {/* Metrics / Highlights */}
+                  <div className="grid grid-cols-3 gap-3 mb-8 py-6 border-y border-border">
+                    <div>
+                      <div className="text-2xl font-bold text-primary">11</div>
+                      <div className="text-xs text-foreground/50">Forensic Engines</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">AI vs Real</div>
+                      <div className="text-xs text-foreground/50">Confidence Breakdown</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">PDF Report</div>
+                      <div className="text-xs text-foreground/50">Forensic Audit Export</div>
+                    </div>
+                  </div>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['Python', 'Streamlit', 'PyTorch', 'Transformers', 'OpenAI CLIP', 'OpenCV', 'Pillow', 'NumPy'].map((tech) => (
+                      <span key={tech} className="inline-flex px-3 py-1 bg-secondary/50 text-foreground/70 rounded-full text-xs font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://nexus-lfndahzcq587dhkuxqwrvoe.streamlit.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
+                    >
+                      Live Demo →
+                    </a>
+                    <a
+                      href="https://github.com/aryanshrm/ai-profile-detector"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
+                    >
+                      GitHub
+                    </a>
+                    <Link
+                      href="/projects/nexus"
+                      className="inline-flex px-4 py-2 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-secondary/30 transition-colors"
+                    >
+                      View Case Study
+                    </Link>
+                  </div>
+                  <p className="text-xs text-foreground/50 mt-4 italic">
+                    Hosted live on Streamlit Cloud. Instant multi-engine forensic scan.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {aiProjectsData.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}

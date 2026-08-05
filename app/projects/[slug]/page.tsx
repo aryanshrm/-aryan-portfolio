@@ -248,137 +248,115 @@ const projects: Record<string, ProjectData> = {
     ]
   },
   nexus: {
-    title: 'NEXUS+ AI Detector v6.1',
-    subtitle: '13-Engine Forensic Inspection Platform',
-    status: 'Active - v6.1 Fixed',
-    note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
-    heroImage: '/images/projects/nexus/nexus_idle.png',
+    title: 'NEXUS+ AI Image Forensics',
+    subtitle: 'Deployed AI image forensics dashboard for detecting AI-generated vs authentic profile images.',
+    status: 'Live Deployed App',
+    note: 'Streamlit-based machine learning & computer vision application hosted on Streamlit Cloud.',
+    heroImage: '/projects/nexus_results.png',
     gallery: [
-      { src: '/images/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
-      { src: '/images/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
-      { src: '/images/projects/nexus/nexus_authentic_green.png', alt: 'AUTHENTIC Green Verdict (40.1% Threat Score)', caption: 'Authentic camera photograph verification (Green verdict 40.1% real).' },
-      { src: '/images/projects/nexus/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Red Verdict (59.2% Threat Score)', caption: 'Full-body AI render detected correctly after weight rebalancing (Red verdict 59.2% AI).' },
-      { src: '/images/projects/nexus/nexus_engines.png', alt: '13-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
-      { src: '/images/projects/nexus/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs fixed AI-generated synthetic media.' }
+      { src: '/projects/nexus_results.png', alt: 'NEXUS+ Analysis Results Dashboard', caption: 'Instant verdict panel with threat score breakdown and human vs AI confidence scores.' },
+      { src: '/projects/nexus_idle.png', alt: 'NEXUS+ Drag & Drop Forensic Scan UI', caption: 'Clean dark glassmorphism upload interface supporting JPG, PNG, JPEG, and WEBP.' },
+      { src: '/projects/nexus_authentic_green.png', alt: 'AUTHENTIC Verdict Verification', caption: 'Authentic camera photograph verification with confidence breakdown.' },
+      { src: '/projects/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Verdict Result', caption: 'Synthetic media detection verdict panel with engine explanations.' },
+      { src: '/projects/nexus_engines.png', alt: '11-Engine Forensics Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/projects/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs synthetic media inspection.' }
     ],
-    problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
-    solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
+    problem: 'Profile images across social media, dating apps, and digital platforms are increasingly AI-generated or synthetically enhanced. Single-model detectors fail to capture the full spectrum of synthetic artifacts and facial manipulations across diverse generator architectures.',
+    solution: 'NEXUS+ is a Streamlit-based machine learning and computer vision project built for AI-generated image detection. It uses multiple forensic engines including neural image classifiers, CLIP semantic analysis, texture smoothness checks, color and saturation analysis, frequency-domain FFT inspection, edge/background analysis, face symmetry detection, Error Level Analysis, watermark detection, and optional fine-tuned ViT inference. The app provides a clean glassmorphism dashboard, AI vs human confidence scores, per-engine explanations, and a downloadable forensic report.',
     role: [
-      'Architected and implemented 13-engine parallel forensic inspection pipeline',
-      'Trained and fine-tuned ViT-Base checkpoint on 208 forensic images (97.5% accuracy)',
-      'Fixed critical false negative bug on full-body AI images by rebalancing detection weights',
-      'Designed premium glassmorphism dark theme with violet/cyan visual direction'
+      'Architected and built the multi-engine computer vision & machine learning detection pipeline',
+      'Integrated PyTorch, OpenAI CLIP, OpenCV, HuggingFace Transformers, Pillow, and NumPy',
+      'Designed clean responsive dark glassmorphism dashboard using Streamlit',
+      'Deployed application live on Streamlit Cloud'
     ],
     techStack: [
-      'Python', 'PyTorch', 'Streamlit', 
-      'OpenAI CLIP ViT-B-32', 'HuggingFace Transformers', 
-      'OpenCV', 'Fourier Transform', 'ELA',
-      'Gemini Vision API', 'Groq Vision'
+      'Python', 'Streamlit', 'PyTorch', 'Transformers', 'OpenAI CLIP', 'OpenCV', 'Pillow', 'NumPy'
     ],
     features: [
-      '🧠 13 Specialized Detection Engines - Neural + Signal + Color + Provenance',
-      '⚡ Instant Verdicts with Human vs AI Breakdown (threat score /100)',
-      '📊 Per-Engine Analysis with risk badges, progress bars, detailed explanations',
-      '🎨 Premium Glassmorphism Dark UI - violet/cyan theme',
-      '🔄 Self-Improving - fine-tuned ViT checkpoint included',
-      '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
+      '🌐 Live AI image detection web app hosted on Streamlit Cloud',
+      '🖼️ Upload JPG, PNG, JPEG, or WEBP images',
+      '⚖️ AI-GENERATED vs AUTHENTIC verdict classification',
+      '🔬 11-engine forensic analysis pipeline',
+      '📊 Human vs AI confidence breakdown',
+      '💡 Detailed per-engine explanations',
+      '📄 Downloadable forensic report',
+      '🎨 Responsive dark glassmorphism UI'
     ],
     results: [
-      'Trained with 208 curated images (106 AI-generated SDXL/Midjourney v6 + 102 Real DSLR/mobile) — curated and tracked via Git LFS',
-      '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
-      '13 Detection Engines: Neural Ensemble, CLIP Semantic, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark Detection, AI Provenance',
-      'Fixed critical bug: Full-body AI image was false negative (37.6% real) → rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED correctly',
-      'Added missing AUTHENTIC UI example: Green verdict 40.1% real vs Red 59.2% AI with comparison banner'
+      'Live Demo: Deployed on Streamlit Cloud at https://nexus-lfndahzcq587dhkuxqwrvoe.streamlit.app/',
+      '11-Engine Forensic Analysis: Combines neural classifiers, CLIP semantic embeddings, FFT frequency inspection, ELA, texture smoothness, edge analysis, and face symmetry',
+      'Explainable AI & Reporting: Generates detailed per-engine explanations and downloadable forensic report'
     ],
     validationSnapshot: [
-      {
-        context: 'ViT-Base Forensic Fine-Tuning',
-        result: '97.5% Val Accuracy (Loss: 0.0295, 3 Epochs)'
-      },
-      {
-        context: 'Full-Body AI False Negative Fix',
-        result: '37.6% Real → 59.2% AI-GENERATED Verdict'
-      },
-      {
-        context: 'Detection Engine Count',
-        result: '13 Parallel Engines (Signal + Neural + Color + Provenance)'
-      }
+      { context: 'Pipeline Architecture', result: '11 Parallel Forensic Engines' },
+      { context: 'Supported Formats', result: 'JPG, PNG, JPEG, WEBP' },
+      { context: 'Deployment Host', result: 'Streamlit Cloud' },
+      { context: 'UI Design', result: 'Responsive Dark Glassmorphism' }
     ],
     learnings: [
-      'Combining high-level semantic embeddings with low-level signal processing (Fourier, ELA, micro-texture)',
-      'Calibrating multi-engine weight ensembles to eliminate false negatives on full-body diffusion outputs',
-      'Designing forensic dark glassmorphism dashboards for instant explainable AI security verdicts'
+      'Combining semantic neural embeddings (CLIP, ViT) with frequency domain signal processing (FFT, ELA)',
+      'Building responsive glassmorphism ML web applications using Streamlit',
+      'Designing explainable multi-engine forensic report pipelines'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: true },
-      { label: 'Demo Repository', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: false }
+      { label: 'Live Demo', url: 'https://nexus-lfndahzcq587dhkuxqwrvoe.streamlit.app/', primary: true },
+      { label: 'GitHub Repository', url: 'https://github.com/aryanshrm/ai-profile-detector', primary: false }
     ]
   },
-  'nexus-ai-detector': {
-    title: 'NEXUS+ AI Detector v6.1',
-    subtitle: '13-Engine Forensic Inspection Platform',
-    status: 'Active - v6.1 Fixed',
-    note: 'Streamlit app - 97.5% accuracy on 208 benchmark images.',
-    heroImage: '/images/projects/nexus/nexus_idle.png',
+  'ai-profile-detector': {
+    title: 'NEXUS+ AI Image Forensics',
+    subtitle: 'Deployed AI image forensics dashboard for detecting AI-generated vs authentic profile images.',
+    status: 'Live Deployed App',
+    note: 'Streamlit-based machine learning & computer vision application hosted on Streamlit Cloud.',
+    heroImage: '/projects/nexus_results.png',
     gallery: [
-      { src: '/images/projects/nexus/nexus_idle.png', alt: 'NEXUS+ Idle UI - Drag & Drop Forensic Scan', caption: 'NEXUS+ drag & drop forensic inspection interface.' },
-      { src: '/images/projects/nexus/nexus_results.png', alt: 'AI-GENERATED 87.3/100 result', caption: 'Instant verdict panel with threat score breakdown and human vs AI classification.' },
-      { src: '/images/projects/nexus/nexus_authentic_green.png', alt: 'AUTHENTIC Green Verdict (40.1% Threat Score)', caption: 'Authentic camera photograph verification (Green verdict 40.1% real).' },
-      { src: '/images/projects/nexus/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Red Verdict (59.2% Threat Score)', caption: 'Full-body AI render detected correctly after weight rebalancing (Red verdict 59.2% AI).' },
-      { src: '/images/projects/nexus/nexus_engines.png', alt: '13-Engine Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
-      { src: '/images/projects/nexus/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs fixed AI-generated synthetic media.' }
+      { src: '/projects/nexus_results.png', alt: 'NEXUS+ Analysis Results Dashboard', caption: 'Instant verdict panel with threat score breakdown and human vs AI confidence scores.' },
+      { src: '/projects/nexus_idle.png', alt: 'NEXUS+ Drag & Drop Forensic Scan UI', caption: 'Clean dark glassmorphism upload interface supporting JPG, PNG, JPEG, and WEBP.' },
+      { src: '/projects/nexus_authentic_green.png', alt: 'AUTHENTIC Verdict Verification', caption: 'Authentic camera photograph verification with confidence breakdown.' },
+      { src: '/projects/nexus_ai_fixed_red.png', alt: 'AI-GENERATED Verdict Result', caption: 'Synthetic media detection verdict panel with engine explanations.' },
+      { src: '/projects/nexus_engines.png', alt: '11-Engine Forensics Breakdown', caption: 'Per-engine risk analysis badges, progress bars, and forensic explanations.' },
+      { src: '/projects/nexus_comparison_banner.png', alt: 'Authentic vs AI Forensic Comparison Banner', caption: 'Side-by-side authentic photograph vs synthetic media inspection.' }
     ],
-    problem: 'Single-model AI detectors fail on modern diffusion outputs (Midjourney v6, SDXL, DALL-E 3, Flux) due to synthetic artifact variation and false negatives on full-body AI renders.',
-    solution: 'NEXUS+ runs 13 specialized engines in parallel — cross-referencing high-level semantic embeddings (CLIP ViT-B-32) with low-level signal processing (Fourier FFT, ELA, micro-texture) to expose invisible synthetic media fingerprints for instant verdicts: AI-GENERATED / UNCERTAIN / AUTHENTIC.',
+    problem: 'Profile images across social media, dating apps, and digital platforms are increasingly AI-generated or synthetically enhanced. Single-model detectors fail to capture the full spectrum of synthetic artifacts and facial manipulations across diverse generator architectures.',
+    solution: 'NEXUS+ is a Streamlit-based machine learning and computer vision project built for AI-generated image detection. It uses multiple forensic engines including neural image classifiers, CLIP semantic analysis, texture smoothness checks, color and saturation analysis, frequency-domain FFT inspection, edge/background analysis, face symmetry detection, Error Level Analysis, watermark detection, and optional fine-tuned ViT inference. The app provides a clean glassmorphism dashboard, AI vs human confidence scores, per-engine explanations, and a downloadable forensic report.',
     role: [
-      'Architected and implemented 13-engine parallel forensic inspection pipeline',
-      'Trained and fine-tuned ViT-Base checkpoint on 208 forensic images (97.5% accuracy)',
-      'Fixed critical false negative bug on full-body AI images by rebalancing detection weights',
-      'Designed premium glassmorphism dark theme with violet/cyan visual direction'
+      'Architected and built the multi-engine computer vision & machine learning detection pipeline',
+      'Integrated PyTorch, OpenAI CLIP, OpenCV, HuggingFace Transformers, Pillow, and NumPy',
+      'Designed clean responsive dark glassmorphism dashboard using Streamlit',
+      'Deployed application live on Streamlit Cloud'
     ],
     techStack: [
-      'Python', 'PyTorch', 'Streamlit', 
-      'OpenAI CLIP ViT-B-32', 'HuggingFace Transformers', 
-      'OpenCV', 'Fourier Transform', 'ELA',
-      'Gemini Vision API', 'Groq Vision'
+      'Python', 'Streamlit', 'PyTorch', 'Transformers', 'OpenAI CLIP', 'OpenCV', 'Pillow', 'NumPy'
     ],
     features: [
-      '🧠 13 Specialized Detection Engines - Neural + Signal + Color + Provenance',
-      '⚡ Instant Verdicts with Human vs AI Breakdown (threat score /100)',
-      '📊 Per-Engine Analysis with risk badges, progress bars, detailed explanations',
-      '🎨 Premium Glassmorphism Dark UI - violet/cyan theme',
-      '🔄 Self-Improving - fine-tuned ViT checkpoint included',
-      '🛡️ Fixed false negative: Full-body AI was 37.6% real → now 59.2% AI-GENERATED after rebalancing weights'
+      '🌐 Live AI image detection web app hosted on Streamlit Cloud',
+      '🖼️ Upload JPG, PNG, JPEG, or WEBP images',
+      '⚖️ AI-GENERATED vs AUTHENTIC verdict classification',
+      '🔬 11-engine forensic analysis pipeline',
+      '📊 Human vs AI confidence breakdown',
+      '💡 Detailed per-engine explanations',
+      '📄 Downloadable forensic report',
+      '🎨 Responsive dark glassmorphism UI'
     ],
     results: [
-      'Trained with 208 curated images (106 AI-generated SDXL/Midjourney v6 + 102 Real DSLR/mobile) — curated and tracked via Git LFS',
-      '168 train / 40 val split, 3 epochs, 97.5% validation accuracy, loss: 0.0295 (google/vit-base-patch16-224)',
-      '13 Detection Engines: Neural Ensemble, CLIP Semantic, Texture Smoothness, Color Forensics, Frequency FFT, Background Edge, Portrait Style, Gemini/Groq Vision, Face Symmetry, ELA, Fine-Tuned ViT, Watermark Detection, AI Provenance',
-      'Fixed critical bug: Full-body AI image was false negative (37.6% real) → rebalanced weights (Texture 2.5, CLIP 2.0, Watermark 3.5, ELA 3.0) → now 59.2% AI-GENERATED correctly',
-      'Added missing AUTHENTIC UI example: Green verdict 40.1% real vs Red 59.2% AI with comparison banner'
+      'Live Demo: Deployed on Streamlit Cloud at https://nexus-lfndahzcq587dhkuxqwrvoe.streamlit.app/',
+      '11-Engine Forensic Analysis: Combines neural classifiers, CLIP semantic embeddings, FFT frequency inspection, ELA, texture smoothness, edge analysis, and face symmetry',
+      'Explainable AI & Reporting: Generates detailed per-engine explanations and downloadable forensic report'
     ],
     validationSnapshot: [
-      {
-        context: 'ViT-Base Forensic Fine-Tuning',
-        result: '97.5% Val Accuracy (Loss: 0.0295, 3 Epochs)'
-      },
-      {
-        context: 'Full-Body AI False Negative Fix',
-        result: '37.6% Real → 59.2% AI-GENERATED Verdict'
-      },
-      {
-        context: 'Detection Engine Count',
-        result: '13 Parallel Engines (Signal + Neural + Color + Provenance)'
-      }
+      { context: 'Pipeline Architecture', result: '11 Parallel Forensic Engines' },
+      { context: 'Supported Formats', result: 'JPG, PNG, JPEG, WEBP' },
+      { context: 'Deployment Host', result: 'Streamlit Cloud' },
+      { context: 'UI Design', result: 'Responsive Dark Glassmorphism' }
     ],
     learnings: [
-      'Combining high-level semantic embeddings with low-level signal processing (Fourier, ELA, micro-texture)',
-      'Calibrating multi-engine weight ensembles to eliminate false negatives on full-body diffusion outputs',
-      'Designing forensic dark glassmorphism dashboards for instant explainable AI security verdicts'
+      'Combining semantic neural embeddings (CLIP, ViT) with frequency domain signal processing (FFT, ELA)',
+      'Building responsive glassmorphism ML web applications using Streamlit',
+      'Designing explainable multi-engine forensic report pipelines'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: true },
-      { label: 'Demo Repository', url: 'https://github.com/sakshamkatoch545-dev/NEXUS-', primary: false }
+      { label: 'Live Demo', url: 'https://nexus-lfndahzcq587dhkuxqwrvoe.streamlit.app/', primary: true },
+      { label: 'GitHub Repository', url: 'https://github.com/aryanshrm/ai-profile-detector', primary: false }
     ]
   },
   fruityfizz: {

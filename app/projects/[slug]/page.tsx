@@ -34,6 +34,74 @@ interface ProjectData {
 }
 
 const projects: Record<string, ProjectData> = {
+  promptshield: {
+    title: 'PromptShield — Agentic AI Security Scanner',
+    subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
+    status: 'Validation-backed MVP',
+    note: 'Currently being hardened toward production-grade packaging.',
+    heroImage: '/projects/promptshield-block.png',
+    gallery: [
+      { src: '/projects/promptshield-block.png', alt: 'PromptShield dashboard showing BLOCK verdict and 5.00 risk score', caption: 'Actual dashboard result for critical injection detection.' }
+    ],
+    problem: 'Agentic AI systems can follow malicious instructions hidden in prompts, documents, tool outputs, or cross-agent workflows.',
+    solution: 'PromptShield combines deterministic rules, context-aware analysis, suspicion scoring, and optional semantic review to detect and explain agentic AI abuse.',
+    role: [
+      'Designed and built the detection engine',
+      'Developed the FastAPI API and dashboard integration',
+      'Created benchmark corpora and validation workflow',
+      'Implemented the semantic review layer'
+    ],
+    techStack: ['Python', 'FastAPI', 'Next.js', 'Pytest', 'YAML', 'Ollama', 'AI Security'],
+    features: [
+      'Prompt injection and instruction override detection',
+      'System/developer prompt extraction detection',
+      'Credential exfiltration detection',
+      'Tool misuse and agent workflow abuse detection',
+      'Memory/context poisoning detection',
+      'HITL bypass detection',
+      'Context classifier for quoted/defensive near-miss handling',
+      'Optional Ollama qwen2.5:7b semantic review',
+      'Explainable verdicts and contributing signals'
+    ],
+    results: [
+      '40+ executable rules',
+      '400+ backend tests',
+      'Recovered 19 deterministic false negatives with optional semantic review'
+    ],
+    validationSnapshot: [
+      {
+        context: 'InjecAgent External Agentic Benchmark',
+        result: '64% deterministic recall → 100% with semantic review; 0 false positives'
+      },
+      {
+        context: 'v2.48 Error Reduction',
+        result: '81% recall, 89% benign safe rate, 78.8% near-miss safe rate; FPs reduced 31 → 4'
+      },
+      {
+        context: 'v2.42 Local Hybrid Semantic',
+        result: '100% malicious recall, 100% benign safe rate, 66.7% near-miss safe rate'
+      },
+      {
+        context: 'JailbreakBench External Stress Test',
+        result: '3% recall, 50% precision'
+      }
+    ],
+    learnings: [
+      'Architecting deterministic vs. semantic detection layers',
+      'Building performant Python APIs for security workloads',
+      'Creating robust test suites for AI vulnerability scanning'
+    ],
+    caveat: 'InjecAgent is the most aligned external benchmark currently integrated. Semantic review uses local Ollama qwen2.5:7b and adds latency. JailbreakBench is a broad generic jailbreak stress test outside PromptShield’s default agentic-security scope and remains a known generalization gap.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
+      { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }
+    ],
+    demoVideo: {
+      title: 'Demo Video',
+      description: '74-second walkthrough of PromptShield detecting benign prompts, prompt injection, and zero-click credential exfiltration — with captions and a GitHub README overview.',
+      url: 'https://www.youtube.com/embed/liucb4vimkA'
+    }
+  },
   codeforge: {
     title: 'CodeForge — Competitive Programming Platform',
     subtitle: 'LeetCode-style full-stack competitive programming platform with Docker-isolated judge, Monaco Editor, real-time leaderboard, AI hints, frosted glass UI.',
@@ -137,74 +205,6 @@ const projects: Record<string, ProjectData> = {
       { label: 'Live Platform', url: 'https://hardened-sulfide-probiotic.ngrok-free.dev', primary: true },
       { label: 'GitHub', url: 'https://github.com/aryanshrm/Codeforge', primary: false }
     ]
-  },
-  promptshield: {
-    title: 'PromptShield — Agentic AI Security Scanner',
-    subtitle: 'Security scanner for prompt injection, tool misuse, credential exfiltration, memory poisoning, HITL bypass, cross-agent abuse, and semantic prompt attacks.',
-    status: 'Validation-backed MVP',
-    note: 'Currently being hardened toward production-grade packaging.',
-    heroImage: '/projects/promptshield-block.png',
-    gallery: [
-      { src: '/projects/promptshield-block.png', alt: 'PromptShield dashboard showing BLOCK verdict and 5.00 risk score', caption: 'Actual dashboard result for critical injection detection.' }
-    ],
-    problem: 'Agentic AI systems can follow malicious instructions hidden in prompts, documents, tool outputs, or cross-agent workflows.',
-    solution: 'PromptShield combines deterministic rules, context-aware analysis, suspicion scoring, and optional semantic review to detect and explain agentic AI abuse.',
-    role: [
-      'Designed and built the detection engine',
-      'Developed the FastAPI API and dashboard integration',
-      'Created benchmark corpora and validation workflow',
-      'Implemented the semantic review layer'
-    ],
-    techStack: ['Python', 'FastAPI', 'Next.js', 'Pytest', 'YAML', 'Ollama', 'AI Security'],
-    features: [
-      'Prompt injection and instruction override detection',
-      'System/developer prompt extraction detection',
-      'Credential exfiltration detection',
-      'Tool misuse and agent workflow abuse detection',
-      'Memory/context poisoning detection',
-      'HITL bypass detection',
-      'Context classifier for quoted/defensive near-miss handling',
-      'Optional Ollama qwen2.5:7b semantic review',
-      'Explainable verdicts and contributing signals'
-    ],
-    results: [
-      '40+ executable rules',
-      '400+ backend tests',
-      'Recovered 19 deterministic false negatives with optional semantic review'
-    ],
-    validationSnapshot: [
-      {
-        context: 'InjecAgent External Agentic Benchmark',
-        result: '64% deterministic recall → 100% with semantic review; 0 false positives'
-      },
-      {
-        context: 'v2.48 Error Reduction',
-        result: '81% recall, 89% benign safe rate, 78.8% near-miss safe rate; FPs reduced 31 → 4'
-      },
-      {
-        context: 'v2.42 Local Hybrid Semantic',
-        result: '100% malicious recall, 100% benign safe rate, 66.7% near-miss safe rate'
-      },
-      {
-        context: 'JailbreakBench External Stress Test',
-        result: '3% recall, 50% precision'
-      }
-    ],
-    learnings: [
-      'Architecting deterministic vs. semantic detection layers',
-      'Building performant Python APIs for security workloads',
-      'Creating robust test suites for AI vulnerability scanning'
-    ],
-    caveat: 'InjecAgent is the most aligned external benchmark currently integrated. Semantic review uses local Ollama qwen2.5:7b and adds latency. JailbreakBench is a broad generic jailbreak stress test outside PromptShield’s default agentic-security scope and remains a known generalization gap.',
-    links: [
-      { label: 'GitHub', url: 'https://github.com/aryanshrm/promptshield', primary: true },
-      { label: 'Watch Demo', url: 'https://youtu.be/liucb4vimkA', primary: false }
-    ],
-    demoVideo: {
-      title: 'Demo Video',
-      description: '74-second walkthrough of PromptShield detecting benign prompts, prompt injection, and zero-click credential exfiltration — with captions and a GitHub README overview.',
-      url: 'https://www.youtube.com/embed/liucb4vimkA'
-    }
   },
   'streamline-ai': {
     title: 'Streamline AI — Video Analysis Platform',

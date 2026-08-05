@@ -98,41 +98,18 @@ export function Hero() {
                   <div className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Featured Builds</div>
                   <div className="space-y-3">
                     
-                    {/* CodeForge Preview */}
-                    <Link href="/projects/codeforge" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
-                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
-                        <Image src="/images/projects/codeforge/codeforge-dashboard.png" alt="CodeForge dashboard" fill className="object-cover object-top" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">CodeForge</div>
-                        <div className="text-xs text-foreground/60 mt-0.5">
-                          Coding & Judge Platform
-                        </div>
-                      </div>
-                    </Link>
-
-                    {/* PromptShield Preview */}
-                    <Link href="/projects/promptshield" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
-                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                    {/* PromptShield Preview (Flagship) */}
+                    <Link href="/projects/promptshield" className="group flex items-center gap-4 p-2.5 -mx-2 rounded-xl bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-primary/30 bg-secondary/50 shrink-0 shadow-sm">
                         <Image src="/projects/promptshield-block.png" alt="PromptShield dashboard" fill className="object-cover" />
                       </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">PromptShield</div>
-                        <div className="text-xs text-foreground/60 mt-0.5">
-                          AI Security Scanner
+                      <div className="flex-grow">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">PromptShield</span>
+                          <span className="text-[10px] uppercase font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">Flagship</span>
                         </div>
-                      </div>
-                    </Link>
-
-                    {/* Streamline AI Preview */}
-                    <Link href="/projects/streamline-ai" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
-                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
-                        <Image src="/projects/streamline-01-upload.png" alt="Streamline AI interface" fill className="object-cover object-top" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Streamline AI</div>
                         <div className="text-xs text-foreground/60 mt-0.5">
-                          Video Intelligence
+                          Agentic AI Security Scanner
                         </div>
                       </div>
                     </Link>
@@ -146,6 +123,32 @@ export function Hero() {
                         <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">NEXUS+ AI Forensics</div>
                         <div className="text-xs text-foreground/60 mt-0.5">
                           11-Engine ML Pipeline
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* CodeForge Preview */}
+                    <Link href="/projects/codeforge" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/images/projects/codeforge/codeforge-dashboard.png" alt="CodeForge dashboard" fill className="object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">CodeForge</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          Coding & Judge Platform
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* Streamline AI Preview */}
+                    <Link href="/projects/streamline-ai" className="group flex items-center gap-4 p-2 -mx-2 rounded-xl hover:bg-white/5 transition-colors">
+                      <div className="relative w-16 h-12 rounded-lg overflow-hidden border border-border bg-secondary/50 shrink-0 shadow-sm">
+                        <Image src="/projects/streamline-01-upload.png" alt="Streamline AI interface" fill className="object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Streamline AI</div>
+                        <div className="text-xs text-foreground/60 mt-0.5">
+                          Video Intelligence
                         </div>
                       </div>
                     </Link>
